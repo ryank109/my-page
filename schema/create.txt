@@ -1,0 +1,7 @@
+use wedding;
+db.createCollection('guest');
+db.getCollection('guest').createIndex({ email: 1 }, { unique: true });
+db.createCollection('additionalGuest');
+db.getCollection('additionalGuest').createIndex({ email: 'hashed' });
+db.createCollection('comment');
+db.getCollection('comment').createIndex({ email: 'hashed' });

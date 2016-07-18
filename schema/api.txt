@@ -1,0 +1,80 @@
+savethedate
+get /savethedate
+
+post /savethedate
+{
+    email: string,
+    attend: 'Y|N'
+}
+
+patch /savethedate/{email}
+{
+    attend: 'Y|N',
+    name: string,
+    address: string,
+    city: string,
+    state: string,
+    zipcode: string,
+    phone: string
+}
+
+delete /savethedate/{email}
+
+
+comment
+post /comment
+{
+    email: string,
+    comment: string
+}
+
+patch /comment/{email}
+{
+    comment: string
+}
+
+delete /comment/{email}
+
+additionalGuest
+post /{email}/additionalGuest
+{
+    email: string,
+    name: string
+}
+
+patch /{email}/additionalGuest/{name}
+{
+}
+
+delete /{email}/additionalGuest/{name}
+
+
+
+db name: wedding
+
+ - guests
+   - email (PK)
+   - firstName
+   - lastName
+   - attend
+   - address
+   - city
+   - state
+   - zipCode
+   - phone
+   - food (vegetarian, fish, meat)
+
+ - additionalGuest
+   - email (PK)
+   - firstName
+   - lastName
+   - food (vegetarian, fish, meat, children)
+   - over12
+
+
+colors:
+
+gold - #DBA525
+light pink - #FFD7DC
+light purple - #E6E6FF
+cream - #FFFFE5

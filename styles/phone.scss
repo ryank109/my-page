@@ -1,0 +1,139 @@
+@import 'animation';
+@import 'variables';
+@import 'phone/button';
+@import 'phone/form';
+@import 'phone/modal';
+@import 'phone/page';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@font-face {
+    font-family: kavoon;
+    src: url(/fonts/Kavoon.otf);
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    background: url('/background3.png') no-repeat;
+    bottom: 0;
+    color: $normal-text-color;
+    font-family: $font-family-regular;
+    font-size: 18px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
+
+.app-container {
+    height: 100%;
+}
+
+.rk-phone-body {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.backdrop {
+    background: url('/background3.png') no-repeat;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+}
+
+.ring {
+    height: 50px;
+    margin: 10px 0 0 0;
+    width: 60px;
+}
+
+.top-title {
+    color: $color7;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.title2 {
+    color: $color7;
+    font-size: 24px;
+}
+
+.title {
+    color: $color2;
+    font-family: $font-family-title;
+    font-size: 48px;
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px #ccc;
+}
+
+.subtitle1 {
+    color: $color7;
+    font-size: 24px;
+    padding-top: 30px;
+}
+
+.subtitle2 {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.top-menu-button {
+    align-self: flex-start;
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+    font-size: 24px;
+    padding: 10px 17px;
+    position: absolute;
+}
+
+.top-menu-popup {
+    animation-duration: .4s;
+    animation-fill-mode: both;
+    background-color: #eee;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 250px;
+}
+
+.top-menu-popup.rk-popup-enter {
+    &.rk-popup-enter-active {
+        animation-name: slideInLeft;
+        opacity: 1;
+        transition: inherit;
+    }
+}
+
+.top-menu-popup.rk-popup-leave {
+    &.rk-popup-leave-active {
+        animation-name: slideOutLeft;
+        opacity: 1;
+        transition: inherit;
+    }
+}
+
+.cls-1,.cls-3 {
+    fill:none;
+    stroke-miterlimit:10;
+}
+.cls-1 {
+    stroke:#b1dfd5;
+    stroke-width:8px;
+}
+.cls-2 {
+    fill:#b1dfd5;
+}
+.cls-3 {
+    stroke:#f1f2f2;
+    stroke-width:0.5px;
+}
