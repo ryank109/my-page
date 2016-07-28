@@ -23,7 +23,7 @@ export default class YesPage extends Component {
                         <div className="form-title">Invitation will soon follow, keep checking your email!</div>
                         <div className="form-title">Also...</div>
                         <div className="form-text">
-                            The following week of our wedding is the <span className="highlighted-text">Super Bowl</span>. If you are traveling from far, it might be best if you get your <span className="highlighted-text">plane tickets</span> early!
+                            The following weekend of our wedding is the <span className="highlighted-text">Super Bowl</span> in Houston. If you are traveling from far, we urge you to get your plane tickets <span className="highlighted-text">ASAP</span>!
                         </div>
                     </div>
                 </div>

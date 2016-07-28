@@ -20,7 +20,7 @@ export default class NoPage extends Component {
                 <div className="page-block">
                     <div className="page-block__inner form form-content">
                         <div className="form-title">We'll miss you...</div>
-                        <div className="form-text">If you ever change your mind, click on that link again!</div>
+                        <div className="form-text">If you ever change your mind, click <span className="highlighted-text">Yes</span> from your original email message!</div>
                     </div>
                 </div>
                 <div className="page-block">
