@@ -1,0 +1,10 @@
+.registry-item {
+    padding: 10px 0;
+
+    &__image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 80px;
+    }
+}
+

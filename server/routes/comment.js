@@ -7,12 +7,12 @@ router.get('/', indexRoute);
 
 router.post('/', function(req, res) {
     var db = req.db;
-    var email = req.body.email;
+    var name = req.body.name;
     var comment = req.body.comment;
-    var data = { email: email, comment: comment };
+    var data = { name: name, comment: comment };
 
     collection(db).insert(data).then(function(doc) {
-        res.status(201);
+        res.status(201).end();
     });
 });
 

@@ -15,7 +15,6 @@ class SaveTheDatePage extends Component {
                     key: location.pathname
                 })
             }
-
             </ReactCSSTransitionGroup>
         );
     }

@@ -1,29 +1,40 @@
-import { delay } from 'lodash';
-import { push } from 'react-router-redux'
+import { push } from 'react-router-redux';
 import Request from 'rk/common/request';
-import { openPopup, closePopup } from 'phone/actions';
 
-export const SAVE_THE_DATE_YES = 'SAVE_THE_DATE_YES';
-export const SAVE_THE_DATE_NO = 'SAVE_THE_DATE_NO';
+export const SET_GUEST_DATA_IN_STATE = 'SET_GUEST_DATA_IN_STATE';
 
-export function responseToSaveTheDate(email, attend) {
+function next(dispatch, response) {
+    const data = JSON.parse(response.response);
+    dispatch(setGuestDataInState(data));
+    dispatch(data.attend === 'Y'
+        ? push('/savethedate/yes')
+        : push('/savethedate/no'));
+}
+
+export function responseToSaveTheDate(email, attend, prevAnswer) {
     return dispatch => {
-        Request.post({
-            url: '/savethedate',
+        if (prevAnswer) {
+            return Request.patch({
+                url: '/guest/' + email,
+                data: { attend, email }
+            }).then(response => next(dispatch, response));
+        }
+
+        return Request.post({
+            url: '/guest',
             data: { attend, email }
-        }).then(response => {
-            dispatch(push('/savethedate/info'));
-        });
+        }).then(response => next(dispatch, response));
     };
 }
 
-export function checkSaveTheDateResponse(email) {
+export function setGuestDataInState(data) {
     return {
-        type: 'blah'
+        data,
+        type: SET_GUEST_DATA_IN_STATE
     };
 }
 
 export default {
-    checkSaveTheDateResponse,
-    responseToSaveTheDate
+    responseToSaveTheDate,
+    setGuestDataInState
 };

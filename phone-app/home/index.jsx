@@ -1,12 +1,8 @@
-import { delay } from 'lodash';
 import classNames from 'classnames';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { popupActions } from 'react-redux-popup';
-import Button from 'phone/components/button';
-import Ring from 'rk/components/ring';
-import actions from 'phone/actions';
-import saveTheDateActions from 'phone/savethedate/actions';
+import { Link } from 'react-router';
+import Calendar from 'rk/components/calendar';
 
 const selector = (state) => {
     return {
@@ -24,54 +20,28 @@ class HomePage extends Component {
 
         return (
             <div className={className} style={style}>
-                <div className="page__title">
-                    <div className="title">
-                        <span>1 • 28 • 2017</span>
-                        <span className="subtitle1">Save the date!</span>
+                <div className="page-block">
+                    <div className="page-block__inner title">
+                        <div>Soo ♥ Ryan</div>
+                        <div className="subtitle1">1 • 28 • 2017</div>
+                        <div className="subtitle2">Houston, TX</div>
                     </div>
                 </div>
-                <div className="page__content">
-                    <div>Soo ♥ Ryan</div>
-                    <Ring />
+                <div className="page-block">
+                    <div className="page-block__inner">
+                        <Calendar />
+                        <div className="save-the-event">Save the date!</div>
+                    </div>
                 </div>
-                <div className="page__footer">
-                    <div>Invitation to follow!</div>
+                <div className="page-block">
+                    <div className="page-block__footer">
+                        <Link className="page-block__footer__hint page-block__footer__hint--left" to="/comment">&lt; Leave a comment!</Link>
+                        <Link className="page-block__footer__hint page-block__footer__hint--right" to="/registry">Registry &gt;</Link>
+                    </div>
                 </div>
-                <SaveTheDateModal
-                    layoverClassName="rk-modal-layover"
-                    popupClassName="rk-modal"
-                    id="saveTheDateForm"
-                    closePopup={() => this.props.closePopup('saveTheDateForm')}
-                    yes={this.yes.bind(this)}
-                    no={this.no.bind(this)}
-                />
-                <SaveTheDateResponseModal
-                    layoverClassName="rk-modal-layover"
-                    popupClassName="rk-modal center"
-                    id="saveTheDateResponseForm"
-                />
             </div>
         );
     }
-
-    componentWillMount() {
-        this.props.checkSaveTheDateResponse(this.props.email);
-    }
-
-    componentDidMount() {
-        this.props.openPopup('saveTheDateForm');
-    }
-
-    yes() {
-        this.props.responseToSaveTheDate('ryank109@gmail.com', true);
-    }
-
-    no() {
-        this.props.responseToSaveTheDate('ryank109@gmail.com', false);
-    }
 }
 
-export default connect(selector, {
-    ...actions,
-    ...saveTheDateActions
-})(HomePage);
+export default connect(selector)(HomePage);

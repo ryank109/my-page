@@ -1,4 +1,4 @@
-import { delay, get } from 'lodash';
+import { get } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from 'phone/components/button';
@@ -6,12 +6,13 @@ import saveTheDateActions from 'phone/savethedate/actions';
 
 const selector = (state, ownProps) => {
     return {
+        attend: state.app.attend,
         email: get(ownProps.location.query, 'email'),
         screenWidth: state.app.screenWidth
     };
 };
 
-class SaveTheDateForm extends Component {
+class SaveTheDatePage extends Component {
     render() {
         const style = {
             width: `${this.props.screenWidth}px`
@@ -21,10 +22,9 @@ class SaveTheDateForm extends Component {
             <div className="page" style={style}>
                 <div className="page-block">
                     <div className="page-block__inner title">
-                        <span className="top-title">Soo ♥ Ryan</span>
-                        <span>1 • 28 • 2017</span>
+                        <span>Soo ♥ Ryan</span>
+                        <span className="subtitle1">1 • 28 • 2017</span>
                         <span className="subtitle2">Houston, TX</span>
-                        <span className="subtitle1">Save the date!</span>
                     </div>
                 </div>
                 <div className="page-block">
@@ -34,12 +34,12 @@ class SaveTheDateForm extends Component {
                             <Button
                                 label="Yes/Maybe"
                                 className="page__button page__button__left"
-                                onClick={this.yes.bind(this)}
+                                onClick={() => this.props.responseToSaveTheDate(this.props.email, 'Y', this.props.attend)}
                             />
                             <Button
                                 label="No"
                                 className="page__button"
-                                onClick={this.no.bind(this)}
+                                onClick={() => this.props.responseToSaveTheDate(this.props.email, 'N', this.props.attend)}
                             />
                         </div>
                     </div>
@@ -47,20 +47,8 @@ class SaveTheDateForm extends Component {
             </div>
         );
     }
-
-    componentWillMount() {
-        this.props.checkSaveTheDateResponse(this.props.email);
-    }
-
-    yes() {
-        this.props.responseToSaveTheDate('ryank109@gmail.com', true);
-    }
-
-    no() {
-        this.props.responseToSaveTheDate('ryank109@gmail.com', false);
-    }
 }
 
 export default connect(selector, {
     ...saveTheDateActions
-})(SaveTheDateForm);
+})(SaveTheDatePage);

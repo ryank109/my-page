@@ -3,49 +3,53 @@ var router = express.Router();
 var collection = require('../collection/guest');
 var indexRoute = require('./index');
 
-router.get('/info', indexRoute);
-router.get('/checkAnswer', function(req, res) {
-    var db = req.db;
-    var email = req.query.email;
+// router.get('/info', indexRoute);
 
-    var guestCollection = collection(db);
-    guestCollection.find(email).then(function(doc) {
-        res.status(200).json(doc);
-    });
-});
+// router.get('/', function(req, res, next) {
+//     var email = req.query['email'];
+//     if (!email) {
+//         res.redirect('/');
+//         return;
+//     }
 
-router.get('/', indexRoute);
+//     var guestCollection = collection(req.db);
+//     guestCollection.find(email).then(function(doc) {
+//         if (doc) {
+//             // change the answer?
+//             res.redirect('/');
+//             return;
+//         }
+//         next();
+//     });
+// }, indexRoute);
 
-router.get('/:email?', function(req, res) {
-    var email = req.params['email'];
+function answer(req, res, attend) {
+    var email = req.query['email'];
     var guestCollection = collection(req.db);
     guestCollection.find(email).then(function(doc) {
-        res.status(200).json(doc);
-    });
-});
-
-router.post('/', function(req, res) {
-    var db = req.db;
-    var email = req.body.email;
-    var attend = req.body.attend ? 'Y' : 'N';
-    console.log('email: ' + email + ', attend: ' + attend);
-    var data = { email: email, attend: attend };
-
-    var guestCollection = collection(db);
-    guestCollection.find(email).then(function(doc) {
         if (doc) {
-            console.log('data: ' + JSON.stringify(data));
+            doc.attend = attend;
             guestCollection.update(data).then(function() {
-                console.log('update');
-                res.status(200).end();
+                res.redirect('/yes');
             });
         } else {
+            var data = {
+                email: email,
+                attend: attend
+            };
             guestCollection.insert(data).then(function() {
-                console.log('insert');
-                res.status(201).end();
+                res.redirect('/no');
             });
         }
     });
+}
+
+router.get('/yes', function(req, res) {
+    answer(req, res, 'Y');
+});
+
+router.get('/no', function(req, res) {
+    answer(req, res, 'N');
 });
 
 module.exports = router;

@@ -4,6 +4,7 @@
 @import 'phone/form';
 @import 'phone/modal';
 @import 'phone/page';
+@import 'phone/registry';
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
@@ -17,7 +18,7 @@ body {
 }
 
 .main {
-    background: url('/background3.png') no-repeat;
+    background: url('/background3.png');
     bottom: 0;
     color: $normal-text-color;
     font-family: $font-family-regular;
@@ -76,50 +77,14 @@ body {
 
 .subtitle1 {
     color: $color7;
-    font-size: 24px;
+    font-size: 32px;
     padding-top: 30px;
 }
 
 .subtitle2 {
+    color: $color7;
     font-size: 18px;
     padding: 10px;
-}
-
-.top-menu-button {
-    align-self: flex-start;
-    background-color: transparent;
-    border: none;
-    color: #ccc;
-    font-size: 24px;
-    padding: 10px 17px;
-    position: absolute;
-}
-
-.top-menu-popup {
-    animation-duration: .4s;
-    animation-fill-mode: both;
-    background-color: #eee;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 250px;
-}
-
-.top-menu-popup.rk-popup-enter {
-    &.rk-popup-enter-active {
-        animation-name: slideInLeft;
-        opacity: 1;
-        transition: inherit;
-    }
-}
-
-.top-menu-popup.rk-popup-leave {
-    &.rk-popup-leave-active {
-        animation-name: slideOutLeft;
-        opacity: 1;
-        transition: inherit;
-    }
 }
 
 .cls-1,.cls-3 {

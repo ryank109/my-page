@@ -3,7 +3,7 @@ import { Component } from 'react';
 export default class Ring extends Component {
     render() {
         return (
-            <svg className="ring" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157.2 172.77">
+            <svg className="ring" id="Layer_1" data-name="Layer 1" viewBox="0 0 157.2 172.77">
                 <path className="cls-1" d="M210.36,403.12A50.12,50.12,0,1,1,193,400" transform="translate(-139.03 -331.14)"/>
                 <path className="cls-1" d="M193,400q2.44,0,4.87.23" transform="translate(-139.03 -331.14)"/>
                 <path className="cls-1" d="M235.4,460.15a45,45,0,0,1-31.23-58.89" transform="translate(-139.03 -331.14)"/>

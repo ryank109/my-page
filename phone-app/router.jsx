@@ -1,22 +1,21 @@
 import { IndexRoute, Router, Route } from 'react-router';
 import App from 'phone/app';
-import SaveTheDateForm from 'phone/savethedate';
-import SaveTheDatePage from 'phone/savethedate/app';
-import InfoForm from 'phone/savethedate/info-form';
-import CommentForm from 'phone/savethedate/comment-form';
+import CommentPage from 'phone/comment';
+import HomePage from 'phone/home';
+import RegistryPage from 'phone/registry';
+import YesPage from 'phone/savethedate/yes-page';
+import NoPage from 'phone/savethedate/no-page';
 
 export default function AppRouter(history) {
     return (
         <Router history={history}>
             <Route path="/" component={App}>
-                <Route path="story" />
-                <Route path="rsvp" />
-                <Route path="registry" />
-            </Route>
-            <Route path="/savethedate" component={SaveTheDatePage}>
-                <IndexRoute component={SaveTheDateForm} />
-                <Route path="info" component={InfoForm} />
-                <Route path="comment" component={CommentForm} />
+                <IndexRoute component={HomePage} />
+                <Route path="comment" component={CommentPage} />
+                <Route path="info" />
+                <Route path="registry" component={RegistryPage} />
+                <Route path="yes" component={YesPage} />
+                <Route path="no" component={NoPage} />
             </Route>
         </Router>
     );
