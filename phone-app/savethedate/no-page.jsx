@@ -38,6 +38,10 @@ export default class NoPage extends Component {
         );
     }
 
+    componentDidMount() {
+        ga('send', 'pageview', 'no');
+    }
+
     done() {
         this.props.dispatch(push('/'));
     }

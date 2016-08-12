@@ -45,6 +45,10 @@ export default class YesPage extends Component {
         );
     }
 
+    componentDidMount() {
+        ga('send', 'pageview', 'yes');
+    }
+
     done() {
         this.props.dispatch(push('/'));
     }
