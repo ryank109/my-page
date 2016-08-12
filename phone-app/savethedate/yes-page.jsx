@@ -25,6 +25,9 @@ export default class YesPage extends Component {
                         <div className="form-text">
                             The following weekend of our wedding is the <span className="highlighted-text">Super Bowl in Houston</span>. If you are traveling from far, we urge you to get your <span className="highlighted-text">plane tickets</span> ASAP!
                         </div>
+                        <div className="form-text">
+                            We have blocked off rooms at <span className="highlighted-text">Magnolia Hotel</span>. Follow this link to <a href="https://resweb.passkey.com/Resweb.do?mode=welcome_ei_new&eventID=15661137">book the room</a>.
+                        </div>
                     </div>
                 </div>
                 <div className="page-block">

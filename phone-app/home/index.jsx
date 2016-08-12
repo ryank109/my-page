@@ -21,10 +21,8 @@ class HomePage extends Component {
         return (
             <div className={className} style={style}>
                 <div className="page-block">
-                    <div className="page-block__inner title">
-                        <div>Soo ♥ Ryan</div>
-                        <div className="subtitle1">1 • 28 • 2017</div>
-                        <div className="subtitle2">Houston, TX</div>
+                    <div className="page-block__inner">
+                        <div className="home-title" />
                     </div>
                 </div>
                 <div className="page-block">
@@ -34,8 +32,14 @@ class HomePage extends Component {
                     </div>
                 </div>
                 <div className="page-block">
+                    <div className="page-block__inner">
+                        <div className="subtitle1">1 • 28 • 2017</div>
+                        <div className="subtitle2">Houston, TX</div>
+                    </div>
+                </div>
+                <div className="page-block page-footer">
                     <div className="page-block__footer">
-                        <Link className="page-block__footer__hint page-block__footer__hint--left" to="/comment">&lt; Leave a comment!</Link>
+                        <Link className="page-block__footer__hint page-block__footer__hint--left" to="/comment">&lt; Leave a message!</Link>
                         <Link className="page-block__footer__hint page-block__footer__hint--right" to="/registry">Registry &gt;</Link>
                     </div>
                 </div>

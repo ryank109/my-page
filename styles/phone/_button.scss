@@ -8,11 +8,16 @@
     cursor: pointer;
     font-size: 24px;
     padding: 10px;
-    min-width: 150px;
-    max-width: 150px;
+    min-width: 130px;
+    max-width: 130px;
 
     &:focus {
         outline: none;
+    }
+
+    &--primary {
+        background-color: $color6;
+        color: $color4;
     }
 }
 

@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import Button from 'phone/components/button';
 import { post } from 'phone/comment/actions';
 
@@ -33,7 +34,7 @@ class CommentPage extends Component {
             <div className={className} style={style}>
                 <div className="page-block">
                     <div className="page-block__inner title">
-                        <div>Comments</div>
+                        <div>What you wanna say?</div>
                     </div>
                 </div>
                 <div className="page-block">
@@ -47,12 +48,17 @@ class CommentPage extends Component {
                     </div>
                 </div>
                 <div className="page-block">
-                    <div className="page-block__inner form form-footer">
+                    <div className="page-block__inner form form-content">
                         <div className="form-buttons">
                             <Button
                                 label="Post"
-                                className="page__button page__button__left"
+                                className="page__button page__button__left button--primary"
                                 onClick={this.post.bind(this)}
+                            />
+                            <Button
+                                label="Back"
+                                className="page__button page__button__right"
+                                onClick={this.navigateHome.bind(this)}
                             />
                         </div>
                     </div>
@@ -64,6 +70,10 @@ class CommentPage extends Component {
     post() {
         this.props.post(this.refs.name.value, this.refs.comment.value);
     }
+
+    navigateHome() {
+        this.props.push('/');
+    }
 }
 
-export default connect(selector, { post })(CommentPage);
+export default connect(selector, { post, push })(CommentPage);

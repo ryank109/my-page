@@ -6,7 +6,7 @@
 @import 'phone/page';
 @import 'phone/registry';
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 @font-face {
     font-family: kavoon;
@@ -18,7 +18,8 @@ body {
 }
 
 .main {
-    background: url('/background3.png');
+    background: url('/home.JPG') no-repeat center center;
+    background-size: cover;
     bottom: 0;
     color: $normal-text-color;
     font-family: $font-family-regular;
@@ -41,14 +42,6 @@ body {
     overflow: hidden;
 }
 
-.backdrop {
-    background: url('/background3.png') no-repeat;
-    height: 100%;
-    opacity: 0.7;
-    position: absolute;
-    z-index: -1;
-}
-
 .ring {
     height: 50px;
     margin: 10px 0 0 0;
@@ -66,24 +59,33 @@ body {
     font-size: 24px;
 }
 
+.home-title {
+    background: url("/title.png") no-repeat center;
+    background-size: contain;
+    flex-grow: 1;
+    margin: 0 30px;
+    padding: 40px;
+}
+
 .title {
     color: $color2;
     font-family: $font-family-title;
     font-size: 48px;
     padding: 20px;
     text-align: center;
-    text-shadow: 2px 2px #ccc;
 }
 
 .subtitle1 {
     color: $color7;
     font-size: 32px;
+    font-weight: bold;
     padding-top: 30px;
 }
 
 .subtitle2 {
     color: $color7;
     font-size: 18px;
+    font-weight: bold;
     padding: 10px;
 }
 

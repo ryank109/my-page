@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import RegistryAmazon from 'rk/components/registry-amazon';
 import RegistryCB2 from 'rk/components/registry-cb2';
 import RegistryCrateAndBarrel from 'rk/components/registry-crate-and-barrel';
 
@@ -30,9 +31,10 @@ class RegistryPage extends Component {
                     <div className="page-block__inner form form-content">
                         <RegistryCrateAndBarrel />
                         <RegistryCB2 />
+                        <RegistryAmazon />
                     </div>
                 </div>
-                <div className="page-block">
+                <div className="page-block page-footer">
                     <div className="page-block__footer">
                         <Link className="page-block__footer__hint page-block__footer__hint--left" to="/">&lt; Home</Link>
                     </div>

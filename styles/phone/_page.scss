@@ -1,6 +1,8 @@
 @import 'variables';
 
 .page {
+    background: url('/home.JPG') no-repeat center center;
+    background-size: cover;
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -17,11 +19,17 @@
         flex-shrink: 1;
     }
 
+    &__title {
+        min-height: 300px;
+    }
+
     &__inner {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
         justify-content: center;
+        min-width: 300px;
+        text-align: center;
     }
 
     &__footer {
@@ -50,6 +58,11 @@
             }
         }
     }
+}
+
+.page-footer {
+    align-self: flex-end;
+    margin-bottom: 10px;
 }
 
 .page__title {
