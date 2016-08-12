@@ -27,8 +27,6 @@ class HomePage extends Component {
                 </div>
                 <div className="page-block">
                     <div className="page-block__inner">
-                        <Calendar />
-                        <div className="save-the-event">Save the date!</div>
                     </div>
                 </div>
                 <div className="page-block">
