@@ -4,11 +4,10 @@
     background-color: #000;
     height: 100%;
     left: 0;
-    opacity: 0.7;
     position: absolute;
+    opacity: 0.3;
     top: 0;
     width: 100%;
-    z-index: 1000;
 }
 
 .rk-modal {
@@ -18,7 +17,6 @@
     box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
     font-size: 14px;
     position: absolute;
-    z-index: 1000;
 
     /** undoing bootstrap, zk **/
     line-height: normal;
@@ -31,7 +29,7 @@
 
 .rk-modal-header {
     align-items: center;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid #ccc;
     display: flex;
     font-size: 18px;
     padding: 20px 15px;
@@ -58,6 +56,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    text-align: left;
 }
 
 .rk-modal-content {
@@ -73,31 +72,31 @@
 }
 
 .rk-modal-footer {
-    border-top: 1px solid $border-color;
+    border-top: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    justify-content: center;
     padding: 15px;
-
-    &--align-right {
-        text-align: right;
-    }
 }
 
 .rk-modal-enter {
     &.rk-modal-enter-active {
         .rk-modal {
             opacity: 1;
-            transform: scale(1);
+            transform: translate3d(0, 0, 0);
             transition: opacity 300ms, transform 300ms;
         }
 
         .rk-modal-layover {
-            opacity: 0.7;
+            opacity: 0.3;
             transition: opacity 300ms;
         }
     }
 
     & .rk-modal {
         opacity: 0;
-        transform: scale(0.7)
+        transform: translate3d(0, 50%, 0);
     }
 
     & .rk-modal-layover {
@@ -108,18 +107,18 @@
 .rk-modal-leave {
     & .rk-modal {
         opacity: 1;
-        transform: scale(1);
+        transform: translate3d(0, 0, 0);;
     }
 
     & .rk-modal-layover {
-        opacity: 0.7;
+        opacity: 0.3;
     }
 }
 
 .rk-modal-leave.rk-modal-leave-active {
     & .rk-modal {
         opacity: 0;
-        transform: scale(0.7);
+        transform: translate3d(0, 50%, 0);
         transition: opacity 300ms, transform 300ms;
     }
 

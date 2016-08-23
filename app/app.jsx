@@ -7,7 +7,6 @@ export default class App extends Component {
         return (
             <div className="rk-body">
                 {this.props.children}
-                <TopMenu />
                 <PopupSandbox
                     modalTransitionName="rk-modal"
                     modalTransitionEnterTimeout={300}

@@ -3,7 +3,7 @@ import { Component, PropTypes } from 'react';
 
 export default class Button extends Component {
     render() {
-        const className = classNames('sbm-button', this.props.className);
+        const className = classNames('button', this.props.className);
         return (
             <button
                 className={className}

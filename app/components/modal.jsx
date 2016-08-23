@@ -11,18 +11,7 @@ export default function(CompositComponent) {
                 height: `${this.props.height}px`,
                 width: `${this.props.width}px`
             };
-            return (
-                <div className={className} style={style}>
-                    <div className="rk-modal-header">
-                        <span className="rk-modal-header__title">{this.props.title}</span>
-                        <Icon className="rk-modal-header__close"
-                            type="close"
-                            onClick={() => this.props.closePopup(this.props.id)}
-                        />
-                    </div>
-                    <CompositComponent {...this.props}/>
-                </div>
-            );
+            return <CompositComponent {...this.props} className={className} style={style} />;
         }
     }
 

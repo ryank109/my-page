@@ -1,9 +1,9 @@
-@import 'variables';
-
 .input {
-    border: 1px solid #ccc;
-    font-size: 24px;
-    padding: 10px;
+    border: none;
+    flex: 1;
+    font-size: 16px;
+    padding: 5px;
+    margin: 1px 0;
 }
 
 .input--error {

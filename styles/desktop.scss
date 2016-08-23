@@ -1,16 +1,17 @@
-/* @import 'components/button';
-@import 'components/chart';
+@import 'components/button';
 @import 'components/form';
 @import 'components/input';
-@import 'components/message-bar';
+@import 'components/page';
 @import 'components/popup';
-@import 'animation';
-@import 'header';
-@import 'login';
-*/
+@import 'components/registry';
 @import 'variables';
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+@font-face {
+    font-family: kavoon;
+    src: url(/fonts/Kavoon.otf);
+}
 
 body {
     background-color: #fff;
@@ -21,8 +22,110 @@ body {
     padding: 0;
 }
 
-.rk-body {
+.home-page {
     align-items: center;
     display: flex;
     flex-direction: column;
+
+    &__section {
+        height: 500px;
+        padding: 40px;
+        width: 100%;
+    }
+
+    &__cover {
+        background: url('/home_cover.jpg') center no-repeat;
+        background-size: cover;
+        color: $color5;
+        height: 570px;
+
+        &__title {
+            font-weight: bold;
+            position: absolute;
+            opacity: .8;
+            top: 450px;
+            right: 50px;
+            font-size: 58px;
+        }
+
+        &__date {
+            position: absolute;
+            top: 540px;
+            right: 50px;
+            font-size: 30px;
+        }
+
+        &__location {
+            position: absolute;
+            top: 570px;
+            right: 50px;
+            font-size: 30px;
+        }
+    }
+
+    &__registry {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+
+        &__container {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            width: 700px;
+        }
+
+        &__item {
+            align-items: center;
+            display: flex;
+            height: 130px;
+            justify-content: center;
+            width: 50%;
+
+            &:hover {
+                background-color: #fff;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &__message {
+        align-items: center;
+        background: url('/background3.png');
+        display: flex;
+        flex-direction: column;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+
+            & .input {
+                margin-bottom: 10px;
+            }
+
+            & .textarea {
+                margin-bottom: 10px;
+            }
+
+            & .button {
+                align-self: center;
+            }
+        }
+    }
+}
+
+.registry-title {
+    color: #444;
+    font-size: 50px;
+    padding: 40px;
+    text-align: center;
+}
+
+.message-title {
+    color: $color2;
+    font-size: 50px;
+    padding: 40px;
+    text-align: center;
 }

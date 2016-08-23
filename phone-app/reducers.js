@@ -15,7 +15,8 @@ const reducers = {
     [COMMENT_CLEAR_FORM]: state => ({
         ...state,
         hasCommentError: false,
-        hasNameError: false
+        hasNameError: false,
+        hasPosted: true
     }),
 
     [LOCK_SCROLL]: state => ({
