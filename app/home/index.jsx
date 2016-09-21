@@ -85,4 +85,4 @@ class HomePage extends Component {
     }
 }
 
-export default connect(selector, { post, getPhotos })(HomePage);
+export default connect(selector, { post })(HomePage);
