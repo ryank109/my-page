@@ -6,7 +6,7 @@ import { routerMiddleware } from 'react-router-redux';
 const reduxRouterMiddleware = routerMiddleware(browserHistory);
 const devToolsExtension = process.env.NODE_ENV !== 'production'
     ? (window.devToolsExtension ? window.devToolsExtension() : f => f)
-    : f => f;
+    : (f => f);
 const createStoreWithMiddleware = compose(
     applyMiddleware(reduxRouterMiddleware, thunk),
     devToolsExtension

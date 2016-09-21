@@ -1,5 +1,6 @@
 import { forEach, map } from 'lodash';
 import { Promise } from 'rsvp';
+import { push } from 'react-router-redux';
 
 const DONE = 4;
 const DEFAULT_HEADERS = {
@@ -36,7 +37,12 @@ const send = options => new Promise((resolve, reject) => {
     xhr.onreadystatechange = () => {
         if (xhr.readyState !== DONE) { return; }
 
-        if (xhr.status >= 400) {
+        if (xhr.status === 401) {
+            if (options.dispatch) {
+                options.dispatch(push('/sooandryanadmin'));
+                reject();
+            }
+        } else if (xhr.status >= 400) {
             reject(xhr);
         } else {
             resolve(xhr);

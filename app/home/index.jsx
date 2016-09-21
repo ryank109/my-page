@@ -6,6 +6,7 @@ import RegistryAmazon from 'rk/components/registry-amazon';
 import RegistryCB2 from 'rk/components/registry-cb2';
 import RegistryCrateAndBarrel from 'rk/components/registry-crate-and-barrel';
 import { post } from 'phone/comment/actions';
+// import { getPhotos } from 'rk/actions';
 
 const selector = state => {
     return {
@@ -16,6 +17,10 @@ const selector = state => {
 };
 
 class HomePage extends Component {
+    // componentDidMount() {
+    //     this.props.getPhotos();
+    // }
+
     render() {
         return (
             <div className="home-page">
@@ -80,4 +85,4 @@ class HomePage extends Component {
     }
 }
 
-export default connect(selector, { post })(HomePage);
+export default connect(selector, { post, getPhotos })(HomePage);

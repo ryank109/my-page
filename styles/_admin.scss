@@ -1,0 +1,63 @@
+.login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+
+    &__username,
+    &__password {
+        margin-bottom: 5px;
+    }
+}
+
+.list {
+    padding: 20px;
+
+    &__header {
+        border-bottom: 1px dashed #ccc;
+        display: flex;
+        font-weight: bold;
+        padding-top: 20px;
+        text-transform: uppercase;
+    }
+
+    &__body {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        display: flex;
+        padding: 5px 0;
+    }
+}
+
+.guest {
+    &__email {
+        min-width: 400px;
+        max-width: 400px;
+        padding: 0 20px;
+    }
+
+    &__attend {
+        display: flex;
+        justify-content: center;
+        min-width: 80px;
+        max-width: 80px;
+        padding: 0 20px;
+    }
+}
+
+.comment {
+    &__name {
+        min-width: 120px;
+        max-width: 120px;
+        padding: 0 20px;
+    }
+
+    &__comments {
+        min-width: 360px;
+        max-width: 360px;
+        padding: 0 20px;
+    }
+}

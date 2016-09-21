@@ -9,7 +9,7 @@ const selector = state => {
     };
 };
 
-export default class NoPage extends Component {
+export class NoPage extends Component {
     render() {
         const style = {
             width: `${this.props.screenWidth}px`

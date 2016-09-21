@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import { popupReducer } from 'react-redux-popup';
 import { routeReducer } from 'react-router-redux';
+import { LOAD_GUESTS, LOAD_COMMENTS } from 'rk/admin/actions';
+import { LOGIN_FAILED } from 'rk/login/actions';
 import { COMMENT_CLEAR_FORM, COMMENT_FORM_HAS_ERROR } from 'phone/comment/actions';
 
 const reducers = {
@@ -15,6 +17,21 @@ const reducers = {
         hasCommentError: false,
         hasNameError: false,
         hasPosted: true
+    }),
+
+    [LOGIN_FAILED]: state => ({
+        ...state,
+        hasLoginError: true
+    }),
+
+    [LOAD_GUESTS]: (state, action) => ({
+        ...state,
+        guests: action.data
+    }),
+
+    [LOAD_COMMENTS]: (state, action) => ({
+        ...state,
+        comments: action.data
     })
 };
 

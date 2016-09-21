@@ -2,8 +2,16 @@ var express = require('express');
 var router = express.Router();
 var collection = require('../collection/comment');
 var indexRoute = require('./index');
+var checkAuth = require('../check-auth').checkAuthAPI;
 
 router.get('/', indexRoute);
+
+router.get('/all', checkAuth, function(req, res) {
+    var guestCollection = collection(req.db);
+    guestCollection.all().then(function(doc) {
+        res.status(200).json(doc);
+    });
+});
 
 router.post('/', function(req, res) {
     var db = req.db;

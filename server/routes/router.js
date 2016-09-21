@@ -4,6 +4,8 @@ var indexRoute = require('./index');
 var saveTheDateRoute = require('./savethedate');
 var commentRoute = require('./comment');
 var guestRoute = require('./guest');
+var loginRoute = require('./login');
+var adminRoute = require('./admin');
 
 var router = express.Router();
 router.use(express.static(path.join(__dirname, '../../public')));
@@ -15,6 +17,9 @@ router.use('/comment', commentRoute);
 router.use('/guest', guestRoute);
 router.use('/yes', indexRoute);
 router.use('/no', indexRoute);
+router.use('/auth', loginRoute);
+router.use('/adminlogin', loginRoute);
+router.use('/sooandryanadmin', adminRoute);
 router.use('/', indexRoute);
 
 router.get('*', function(req, res) {

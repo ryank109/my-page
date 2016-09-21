@@ -9,7 +9,7 @@ const selector = state => {
     };
 };
 
-export default class YesPage extends Component {
+export class YesPage extends Component {
     render() {
         const style = {
             width: `${this.props.screenWidth}px`

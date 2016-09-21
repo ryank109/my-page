@@ -1,7 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var helmet = require('helmet');
+var passport = require('passport');
 var path = require('path');
 var router = require('./server/routes/router');
+var passportStrategy = require('./server/passport-strategy');
+var session = require('express-session');
+
+var appProperties = require('./server/app-properties');
+appProperties.init();
 
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -16,6 +24,28 @@ app.use(bodyParser.json());
 app.use(function(req, res, next) {
     req.db = db;
     next();
+});
+
+app.use(cookieParser());
+app.use(helmet());
+
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+    secret : 'nayroos',
+    name : 'sessionId',
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(passportStrategy);
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, user);
 });
 
 // routes
