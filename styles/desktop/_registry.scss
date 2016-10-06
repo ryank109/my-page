@@ -1,0 +1,38 @@
+.registry-item {
+    padding: 2px 0;
+
+    &__image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 80px;
+    }
+}
+
+.registry {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    min-width: 100%;
+
+    &__container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        align-items: center;
+        display: flex;
+        height: 130px;
+        justify-content: center;
+        width: 50%;
+
+        &:hover {
+            background-color: #fff;
+            opacity: 0.5;
+        }
+    }
+}

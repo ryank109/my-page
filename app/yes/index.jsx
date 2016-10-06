@@ -1,20 +1,20 @@
+import { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { popupActions } from 'react-redux-popup';
 import HomePage from 'rk/home';
 import YesModal from 'rk/yes/yes-modal';
 
-class YesPage extends HomePage {
+class YesPage extends Component {
     render() {
         return (
-            <div>
-                {super.render()}
+            <HomePage>
                 <YesModal
                     closePopup={this.close.bind(this)}
                     id="yesModal"
                     height={400}
                     width={500} />
-            </div>
+            </HomePage>
         );
     }
 

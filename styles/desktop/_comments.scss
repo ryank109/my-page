@@ -1,0 +1,29 @@
+.comments {
+    align-items: center;
+    /* background: url('/background3.png'); */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    min-width: 100%;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+
+        & .input {
+            margin-bottom: 10px;
+        }
+
+        & .textarea {
+            margin-bottom: 10px;
+        }
+
+        & .button {
+            align-self: center;
+        }
+    }
+}
