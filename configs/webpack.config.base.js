@@ -30,6 +30,7 @@ var env = {
 env.build = env.production || env.staging;
 
 var mainCss = new ExtractTextPlugin(projectName + '.[name].css');
+var iconCss = new ExtractTextPlugin('icons.css');
 
 var config = {
   entry: {
@@ -62,7 +63,8 @@ var config = {
       __CURRENT_ENV__: '\'' + (NODE_ENV) + '\''
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.' + projectName + '.js'),
-    mainCss
+    mainCss,
+    iconCss
   ],
 
   module: {
@@ -76,6 +78,15 @@ var config = {
         test: /\.scss$/,
         include: path.join(__dirname, '../styles'),
         loader: mainCss.extract(['css-loader', 'postcss-loader', 'sass-loader'])
+      },
+      {
+        test: /\.scss$/,
+        include: path.join(__dirname, '../node_modules/font-awesome/scss'),
+        loader: iconCss.extract(['css-loader', 'postcss-loader', 'sass-loader'])
+      },
+      {
+        test: /\.woff|\.woff2|\.svg|.eot|\.ttf/,
+        loader : 'url?prefix=font/&limit=10000'
       }
     ]
   },

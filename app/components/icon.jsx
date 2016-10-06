@@ -3,13 +3,14 @@ import { Component, PropTypes } from 'react';
 
 export default class Icon extends Component {
     render() {
-        const className = classNames('fa', `fa-${this.props.type}`, this.props.className);
-        return <i ref="icon" className={className} onClick={this.props.onClick}></i>;
+        const className = classNames('fa', this.props.className);
+        return (<i className={className} onClick={this.props.onClick} />);
     }
 }
 
 Icon.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func,
-    type: PropTypes.string.isRequired
+    onMouseOver: PropTypes.func,
+    onMouseOut: PropTypes.func
 };
