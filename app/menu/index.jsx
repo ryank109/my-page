@@ -3,18 +3,9 @@ import { forEach, reduce } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import { MENUS, setMenuPosition } from 'rk/actions';
+import { MENUS, MENU_DETAILS, setMenuPosition } from 'rk/menu/actions';
 import Divider from 'rk/components/divider';
 import Icon from 'rk/components/icon';
-
-const MENU_DETAILS = {
-    '/': { icon: 'fa-home', title: 'Home' },
-    /* '/story': { icon: 'fa-heart', title: 'Our Story' },
-    '/photos': { icon: 'fa-camera', title: 'Photos' }, */
-    '/registry': { icon: 'fa-gift', title: 'Registry' },
-    '/comment': { icon: 'fa-commenting', title: 'Leave a Comment' } /*,
-    '/map': { icon: 'fa-map', title: 'Location' } */
-};
 
 const LAST_INDEX = MENUS.length - 1;
 

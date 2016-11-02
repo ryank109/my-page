@@ -5,6 +5,7 @@ import router from 'phone/router';
 import store from 'phone/store';
 
 // require style to generate one css file
+require('../node_modules/font-awesome/scss/font-awesome.scss');
 require('../styles/phone.scss');
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -17,3 +18,5 @@ const rootElement = document.getElementById('main');
 if (rootElement) {
     render(<Provider store={store}>{router(browserHistory)}</Provider>, rootElement);
 }
+
+document.addEventListener('touchmove', event => event.preventDefault(), false);

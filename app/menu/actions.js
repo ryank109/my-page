@@ -12,6 +12,15 @@ export const MENUS = [
     '/map' */
 ];
 
+export const MENU_DETAILS = {
+    '/': { icon: 'fa-home', title: 'Home' },
+    /* '/story': { icon: 'fa-heart', title: 'Our Story' },
+    '/photos': { icon: 'fa-camera', title: 'Photos' }, */
+    '/registry': { icon: 'fa-gift', title: 'Registry' },
+    '/comment': { icon: 'fa-commenting', title: 'Leave a Comment' } /*,
+    '/map': { icon: 'fa-map', title: 'Location' } */
+};
+
 export function initialMenuPosition(route) {
     return {
         position: MENUS.indexOf(route),

@@ -1,0 +1,52 @@
+$menu-background-color: #b1dfd5;
+$menu-active-color: #5f9ea0;
+$menu-hover-color: #f08080;
+$menu-color: #f1ede2;
+
+.menu-container {
+    align-items: center;
+    background-color: $menu-background-color;
+    display: flex;
+    height: 100px;
+    min-height: 100px;
+}
+
+.menu {
+    color: $menu-color;
+    display: flex;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &__item {
+        border-radius: 41px;
+        font-size: 20px;
+        list-style-type: none;
+
+        &--active {
+            background-color: $menu-active-color;
+            transform: scale(1.2, 1.2);
+            transition: transform 300ms;
+        }
+
+        &__icon {
+            align-items: center;
+            border-radius: 41px;
+            height: 41px;
+            justify-content: center;
+            width: 41px;
+        }
+
+        &__label {
+            font-size: 20px;
+            pointer-events: none;
+            position: absolute;
+            white-space: nowrap;
+        }
+    }
+}
+
+.divider {
+    margin: 0 7px;
+}

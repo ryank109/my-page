@@ -2,13 +2,13 @@ import classNames from 'classnames';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from 'rk/components/button';
-import { post } from 'phone/comment/actions';
+import { post } from 'rk/comments/actions';
 
 const selector = state => {
     return {
-        hasCommentError: state.app.hasCommentError,
-        hasNameError: state.app.hasNameError,
-        hasPosted: state.app.hasPosted
+        hasCommentError: state.comments.hasCommentError,
+        hasNameError: state.comments.hasNameError,
+        hasPosted: state.comments.hasPosted
     };
 };
 

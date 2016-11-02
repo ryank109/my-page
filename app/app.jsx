@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import { PopupSandbox } from 'react-redux-popup';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Menu from 'rk/menu';
-import { initialMenuPosition } from 'rk/actions';
+import { initialMenuPosition } from 'rk/menu/actions';
 
 const selector = (state, ownProps) => {
     return {
         activeRoute: ownProps.location.pathname,
-        routeAnimationDirection: state.app.routeAnimationDirection
+        routeAnimationDirection: state.menu.routeAnimationDirection
     };
 };
 

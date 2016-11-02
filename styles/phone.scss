@@ -1,102 +1,52 @@
-@import 'animation';
-@import 'variables';
-@import 'components/button';
-@import 'components/form';
-@import 'components/page';
-@import 'components/registry';
-@import 'phone/input';
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
-@font-face {
-    font-family: kavoon;
-    src: url(/fonts/Kavoon.otf);
-}
-
-@viewport{
-  width: device-width;
-}
+$font-family-regular: "Open Sans", Helvetica, sans-sarif, Arial;
+$normal-text-color: #333;
 
 body {
-    margin: 0;
-}
-
-.main {
-    background: url('/home.JPG') no-repeat center center;
-    background-size: cover;
+    background-color: #fff;
     bottom: 0;
     color: $normal-text-color;
+    display: flex;
+    flex-direction: column;
     font-family: $font-family-regular;
-    font-size: 18px;
-    height: 100%;
+    font-size: 14px;
+    left: 0;
     margin: 0;
     padding: 0;
     position: absolute;
+    overflow: hidden;
+    right: 0;
     top: 0;
 }
 
-.app-container {
-    height: 100%;
-}
-
-.rk-phone-body {
-    align-items: center;
+.main {
     display: flex;
-    height: 100%;
-    overflow: hidden;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.ring {
-    height: 50px;
-    margin: 10px 0 0 0;
-    width: 60px;
+.main-container {
+    display: flex;
+    flex-grow: 1;
+
+    & > span {
+        display: flex;
+        flex-grow: 1;
+        min-width: 100%;
+    }
 }
 
-.top-title {
-    color: $color7;
-    font-size: 24px;
-    padding: 20px;
+.fa {
+    display: flex !important;
+    font-size: 22px !important;
 }
 
-.title2 {
-    color: $color7;
-    font-size: 24px;
-}
-
-.title {
-    color: $color2;
-    font-family: $font-family-title;
-    font-size: 48px;
-    padding: 20px;
-    text-align: center;
-}
-
-.subtitle1 {
-    color: $color7;
-    font-size: 32px;
-    font-weight: bold;
-    padding-top: 30px;
-}
-
-.subtitle2 {
-    color: $color7;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-}
-
-.cls-1,.cls-3 {
-    fill:none;
-    stroke-miterlimit:10;
-}
-.cls-1 {
-    stroke:#b1dfd5;
-    stroke-width:8px;
-}
-.cls-2 {
-    fill:#b1dfd5;
-}
-.cls-3 {
-    stroke:#f1f2f2;
-    stroke-width:0.5px;
-}
+@import 'components/button';
+@import 'components/input';
+@import 'components/popup';
+@import 'desktop/animation';
+@import 'phone/menu';
+@import 'phone/home';
+@import 'phone/registry';
+@import 'phone/comments';
