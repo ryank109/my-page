@@ -1,5 +1,3 @@
-import Request from 'rk/common/request';
-
 export const INITIAL_MENU_POSITION = 'INITIAL_MENU_POSITION';
 export const SET_MENU_POSITION = 'SET_MENU_POSITION';
 

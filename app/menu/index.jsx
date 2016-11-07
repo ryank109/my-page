@@ -76,11 +76,11 @@ class Menu extends Component {
         return () => {
             this.props.setMenuPosition(route);
             this.props.push(route);
-        }
+        };
     }
 
     mouseOverHandler(route) {
-        return event => {
+        return () => {
             const rect = this._refs[route].getBoundingClientRect();
             const labelRect = this._refs[this.getLabelRefKey(route)].getBoundingClientRect();
             const top = rect.bottom;

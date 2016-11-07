@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { Component, PropTypes } from 'react';
 import { Modal } from 'react-redux-popup';
-import Icon from 'rk/components/icon';
 
 export default function(CompositComponent) {
     class ModalContainer extends Component {

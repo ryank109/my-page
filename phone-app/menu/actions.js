@@ -1,4 +1,4 @@
-import { INITIAL_MENU_POSITION, MENUS, SET_MENU_POSITION } from 'rk/menu/actions';
+import { INITIAL_MENU_POSITION, MENUS } from 'rk/menu/actions';
 
 export const MENU_ROTATE = 'MENU_ROTATE';
 export const MENU_TOUCH_END = 'MENU_TOUCH_END';
@@ -39,7 +39,7 @@ export function rotate(menuContainerWidth, menuItemLeft) {
         menuItemLeft,
         type: MENU_ROTATE
     };
-};
+}
 
 export function touchEnd(transitionToEnd) {
     return {

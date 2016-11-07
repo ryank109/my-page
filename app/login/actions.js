@@ -8,9 +8,9 @@ export function login(username, password) {
         Request.post({
             data: { username, password },
             url: '/auth'
-        }).then(response => {
+        }).then(() => {
             dispatch(navigateToAdminPage());
-        }).catch(error => {
+        }).catch(() => {
             dispatch(failedLogin());
         });
     };

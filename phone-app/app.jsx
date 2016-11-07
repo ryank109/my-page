@@ -145,7 +145,7 @@ class App extends Component {
         }
     }
 
-    touchEnd(event) {
+    touchEnd() {
         if (this.hasTouchMoved && !this.props.isTransitionToEnd) {
             this.hasTouchMoved = false;
             this.props.touchEnd();

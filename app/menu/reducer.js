@@ -13,7 +13,7 @@ export const reducers = {
         return {
             ...state,
             routeAnimationDirection,
-            currentPosition: position,
+            currentPosition: position
         };
     }
 };

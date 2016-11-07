@@ -1,15 +1,11 @@
 import classNames from 'classnames';
-import { forEach, map, reduce } from 'lodash';
+import { forEach, reduce } from 'lodash';
 import { Component } from 'react';
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { MENUS, MENU_DETAILS } from 'rk/menu/actions';
 import Divider from 'rk/components/divider';
 import Icon from 'rk/components/icon';
 
 const LAST_INDEX = MENUS.length - 1;
-
-const acceptableSwipeVelocity = 15;
 
 export default class Menu extends Component {
     constructor(props) {
@@ -38,11 +34,6 @@ export default class Menu extends Component {
             const menu = MENU_DETAILS[route];
             const isActive = route === this.props.activeRoute;
             const isHover = !!this.state[route];
-            const style = this.state[route];
-            let labelStyle = {
-                opacity: isHover ? 1 : 0,
-                ...style
-            };
             const itemClassName = classNames({
                 'menu__item': true,
                 'menu__item--active': isActive

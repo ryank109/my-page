@@ -1,4 +1,3 @@
-import { get } from 'lodash';
 import { combineReducers } from 'redux';
 import { popupReducer } from 'react-redux-popup';
 import { routerReducer } from 'react-router-redux';

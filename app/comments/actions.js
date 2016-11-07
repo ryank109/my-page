@@ -18,7 +18,7 @@ export function post(name, comment) {
     return dispatch => Request.post({
         url: '/comment',
         data: { name, comment }
-    }).then(response => {
+    }).then(() => {
         dispatch({ type: COMMENT_CLEAR_FORM });
         dispatch(push('/'));
     });

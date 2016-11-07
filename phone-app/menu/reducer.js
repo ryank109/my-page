@@ -10,12 +10,11 @@ import {
 } from 'phone/menu/actions';
 
 const MENU_ITEM_WIDTH_OFFSET = 20.5;
-const SWIPE_DISTANCE = 300;
 const TRANSITION_DURATION = 500;
 
 function getMenuXPosition(menuContainerWidth, menuItemLeft) {
     return (menuContainerWidth / 2) - MENU_ITEM_WIDTH_OFFSET - menuItemLeft;
-};
+}
 
 const reducerFuncs = {
     [INITIAL_MENU_POSITION]: (state, action) => {
@@ -56,7 +55,7 @@ const reducerFuncs = {
             isTransitionToEnd: true,
             xStart: false,
             yStart: false
-        }
+        };
     },
 
     [MENU_TOUCH_MOVE]: (state, { menuOffset }) => ({
@@ -121,8 +120,8 @@ const reducerFuncs = {
             transitionTimestamp,
             isTransitionToEnd: true,
             xStart: false,
-            yStart: false,
-        }
+            yStart: false
+        };
     },
 
     [MENU_TRANSITION_TO_END]: state => {
