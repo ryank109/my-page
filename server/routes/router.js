@@ -1,26 +1,29 @@
 var express = require('express');
 var path = require('path');
-var indexRoute = require('./index');
-var saveTheDateRoute = require('./savethedate');
+var adminRoute = require('./admin');
 var commentRoute = require('./comment');
 var guestRoute = require('./guest');
+var indexRoute = require('./index');
 var loginRoute = require('./login');
-var adminRoute = require('./admin');
+var photosRoute = require('./photos');
+var saveTheDateRoute = require('./savethedate');
 
 var router = express.Router();
 router.use(express.static(path.join(__dirname, '../../public')));
-router.use('/story', indexRoute);
-router.use('/rsvp', indexRoute);
-router.use('/registry', indexRoute);
-router.use('/savethedate', saveTheDateRoute);
+router.use('/', indexRoute);
+router.use('/adminlogin', loginRoute);
+router.use('/auth', loginRoute);
 router.use('/comment', commentRoute);
 router.use('/guest', guestRoute);
-router.use('/yes', indexRoute);
 router.use('/no', indexRoute);
-router.use('/auth', loginRoute);
-router.use('/adminlogin', loginRoute);
+router.use('/photos', photosRoute);
+router.use('/photos/:photoId', indexRoute);
+router.use('/registry', indexRoute);
+router.use('/rsvp', indexRoute);
+router.use('/savethedate', saveTheDateRoute);
 router.use('/sooandryanadmin', adminRoute);
-router.use('/', indexRoute);
+router.use('/story', indexRoute);
+router.use('/yes', indexRoute);
 
 router.get('*', function(req, res) {
     res.redirect('/');

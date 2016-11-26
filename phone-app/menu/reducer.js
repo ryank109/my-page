@@ -108,8 +108,7 @@ const reducerFuncs = {
         const currentPosition = state.currentPosition + (isMoveLeft ? -1 : 1);
         push(MENUS[currentPosition]);
 
-        const menuXPosition = // getMenuXPosition(state.menuContainerWidth, state.menuItemPositions[currentPosition]);
-            state.menuXPosition + (state.menuDistance * (isMoveLeft ? 1 : -1));
+        const menuXPosition = state.menuXPosition + (state.menuDistance * (isMoveLeft ? 1 : -1));
         const menuOffset = (state.menuDistance - Math.abs(state.menuOffset)) * (isMoveLeft ? 1 : -1);
         return {
             ...state,

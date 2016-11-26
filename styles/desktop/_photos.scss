@@ -1,0 +1,81 @@
+.photos {
+    align-items: initial;
+    display: flex;
+    justify-content: initial;
+    overflow: auto;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 50px 100px;
+    }
+
+    &__hash-tag {
+        align-items: center;
+        color: #666;
+        display: flex;
+        flex-basis: 100%;
+        font-size: 28px;
+        justify-content: center;
+        padding-bottom: 20px;
+
+        &__icon {
+            font-size: 42px !important;
+            padding: 10px;
+        }
+    }
+
+    &__bottom-link {
+        padding: 50px;
+        text-align: center;
+        flex-basis: 100%;
+    }
+}
+
+.photo-viewer-modal {
+    align-items: center;
+    background-color: #555;
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    width: 100%;
+}
+
+.photo-viewer {
+    align-items: center;
+    color: #eee;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__image {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        width: 80%;
+    }
+
+    &__navigation {
+        cursor: pointer;
+        font-size: 40px !important;
+
+        &:hover {
+            color: #999;
+        }
+    }
+}
+
+.photo {
+    border: 5px solid #fff;
+    border-radius: 150px;
+    filter: sepia(80%);
+    margin: 30px;
+    transition: filter .2s;
+
+    &:hover {
+        border-color: #999;
+        filter: initial;
+        transition: filter .2s;
+    }
+}

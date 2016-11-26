@@ -29,7 +29,7 @@ class CommentPage extends Component {
         });
 
         return (
-            <div className="comments">
+            <div className="page comments">
                 <div className="comments__container">
                     <input className={inputNameClass} type="text" placeholder="Your Name" ref="name"/>
                     <textarea className={commentClass} placeholder="Say something!" rows={7} ref="comment" />

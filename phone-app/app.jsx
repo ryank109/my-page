@@ -43,12 +43,13 @@ class App extends Component {
         const transitionTimeout = transitionClassName === '' ? 0 : 300;
 
         return (
-            <div className="main"
-                onTouchStart={this.touchStart.bind(this)}
-                onTouchMove={this.touchMove.bind(this)}
-                onTouchEnd={this.touchEnd.bind(this)}
-            >
-                <div className="main-container">
+            <div className="main">
+                <div
+                    className="main-container"
+                    onTouchStart={this.touchStart.bind(this)}
+                    onTouchMove={this.touchMove.bind(this)}
+                    onTouchEnd={this.touchEnd.bind(this)}
+                >
                     <ReactCSSTransitionGroup
                         transitionName={transitionClassName}
                         transitionEnterTimeout={transitionTimeout}
@@ -61,6 +62,9 @@ class App extends Component {
                 </div>
                 <div
                     className="menu-container"
+                    onTouchStart={this.touchStart.bind(this)}
+                    onTouchMove={this.touchMove.bind(this)}
+                    onTouchEnd={this.touchEnd.bind(this)}
                     ref="menuContainer"
                 >
                     <Menu

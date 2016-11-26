@@ -17,9 +17,9 @@ export default function(CompositComponent) {
     ModalContainer.propTypes = {
         className: PropTypes.string,
         closePopup: PropTypes.func.isRequired,
-        height: PropTypes.number.isRequired,
+        height: PropTypes.number,
         id: PropTypes.string.isRequired,
-        width: PropTypes.number.isRequired
+        width: PropTypes.number
     };
 
     const rkModal = Modal(ModalContainer);

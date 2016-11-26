@@ -3,6 +3,8 @@ import App from 'phone/app';
 import CommentPage from 'rk/comments';
 import HomePage from 'rk/home';
 import RegistryPage from 'rk/registry';
+import PhotosPage from 'phone/photos';
+import PhotoViewer from 'phone/photos/photo-viewer';
 
 export default function AppRouter(history) {
     return (
@@ -12,9 +14,10 @@ export default function AppRouter(history) {
                 <Route path="comment" component={CommentPage} />
                 <Route path="registry" component={RegistryPage} />
                 <Route path="story" component={RegistryPage} />
-                <Route path="photos" component={RegistryPage} />
+                <Route path="photos" component={PhotosPage} />
                 <Route path="map" component={RegistryPage} />
             </Route>
+            <Route path="/photos/:photoId" component={PhotoViewer} />
         </Router>
     );
 }

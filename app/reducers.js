@@ -1,9 +1,10 @@
-import { combineReducers } from 'redux';
 import { popupReducer } from 'react-redux-popup';
 import { routerReducer } from 'react-router-redux';
+import { combineReducers } from 'redux';
 import commentsReducer from 'rk/comments/reducer';
 import menuReducer from 'rk/menu/reducer';
-import { LOAD_GUESTS, LOAD_COMMENTS } from 'rk/admin/actions';
+import photoReducer from 'rk/photos/reducer';
+import { LOAD_COMMENTS, LOAD_GUESTS } from 'rk/admin/actions';
 import { LOGIN_FAILED } from 'rk/login/actions';
 
 const reducers = {
@@ -29,9 +30,10 @@ function appReducer(state = {}, action) {
 }
 
 export default combineReducers({
-    popup: popupReducer,
-    routing: routerReducer,
     app: appReducer,
     comments: commentsReducer,
-    menu: menuReducer
+    menu: menuReducer,
+    photos: photoReducer,
+    popup: popupReducer,
+    routing: routerReducer
 });

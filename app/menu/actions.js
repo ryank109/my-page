@@ -3,8 +3,8 @@ export const SET_MENU_POSITION = 'SET_MENU_POSITION';
 
 export const MENUS = [
     '/',
-    /* '/story',
-    '/photos', */
+    /* '/story', */
+    '/photos',
     '/registry',
     '/comment' /*,
     '/map' */
@@ -12,8 +12,8 @@ export const MENUS = [
 
 export const MENU_DETAILS = {
     '/': { icon: 'fa-home', title: 'Home' },
-    /* '/story': { icon: 'fa-heart', title: 'Our Story' },
-    '/photos': { icon: 'fa-camera', title: 'Photos' }, */
+    /* '/story': { icon: 'fa-heart', title: 'Our Story' }, */
+    '/photos': { icon: 'fa-camera', title: 'Photos' },
     '/registry': { icon: 'fa-gift', title: 'Registry' },
     '/comment': { icon: 'fa-commenting', title: 'Leave a Comment' } /*,
     '/map': { icon: 'fa-map', title: 'Location' } */
