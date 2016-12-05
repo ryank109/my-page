@@ -1,0 +1,80 @@
+.rsvp-page {
+    align-self: baseline;
+    display: flex;
+    flex-direction: column;
+
+    &__form {
+        flex-direction: row;
+        margin-bottom: 40px;
+
+        &__meal {
+            margin-bottom: 40px;
+        }
+
+        &__name {
+            margin: 0 10px 0 0;
+            min-width: auto;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button {
+        color: #fff;
+
+        &--primary {
+            align-self: flex-end;
+            background-color: #2baadf;
+            color: #fff;
+            margin: 20px;
+
+            &:hover {
+                background-color: darken(#2baadf, 5%);
+            }
+        }
+
+        &--delete {
+            background-color: #d9534f;
+            color: #fff;
+            margin: 20px;
+
+            &:hover {
+                background-color: darken(#d9534f, 5%);
+            }
+        }
+
+        &--secondary {
+            background-color: #fff;
+            color: #2baadf;
+            font-size: 20px;
+            margin-left: 10px;
+
+            &:hover {
+                color: darken(#2baadf, 5%);
+            }
+        }
+
+    }
+}
+
+.rsvp-title {
+    color: #ccc;
+    font-size: 60px;
+    margin: 20px auto 10px auto;
+}
+
+.rsvp-date {
+    color: #ccc;
+    font-size: 24px;
+    margin: 0 auto 50px auto;
+}
+
+.rsvp-footer {
+    align-items: flex-end;
+    color: #fff;
+    flex-direction: column;
+    font-size: 30px;
+}

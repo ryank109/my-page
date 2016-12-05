@@ -7,7 +7,7 @@ import {
     SHOW_NO_PHOTOS
 } from 'rk/photos/actions';
 
-export const reducers = {
+export default {
     [LOAD_THUMBNAILS]: (state, { data }) => ({
         ...state,
         data
@@ -41,8 +41,3 @@ export const reducers = {
         data: null
     })
 };
-
-export default function reducer(state = {}, action) {
-    const reducer = reducers[action.type];
-    return reducer ? reducer(state, action) : state;
-}

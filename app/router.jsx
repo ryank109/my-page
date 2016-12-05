@@ -1,3 +1,4 @@
+import { IndexRoute, Router, Route } from 'react-router';
 import AdminLogin from 'rk/login';
 import AdminPage from 'rk/admin';
 import AdminGuestsPage from 'rk/admin/guests';
@@ -8,8 +9,8 @@ import Home from 'rk/home';
 import NoPage from 'rk/no';
 import PhotosPage from 'rk/photos';
 import RegistryPage from 'rk/registry';
+import RsvpPage from 'rk/rsvp';
 import YesPage from 'rk/yes';
-import { IndexRoute, Router, Route } from 'react-router';
 
 export default function AppRouter(history) {
     return (
@@ -28,6 +29,7 @@ export default function AppRouter(history) {
                 </Route>
                 <Route path="yes" component={YesPage} />
             </Route>
+            <Route path="rsvp" component={RsvpPage} />
         </Router>
     );
 }
