@@ -24,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    overflow: auto;
 }
 
 .main-container {
@@ -44,6 +45,7 @@ body {
 
 @import 'components/button';
 @import 'components/input';
+@import 'components/page';
 @import 'components/popup';
 @import 'desktop/animation';
 @import 'phone/menu';
@@ -51,3 +53,4 @@ body {
 @import 'phone/registry';
 @import 'phone/comments';
 @import 'phone/photos';
+@import 'phone/rsvp';

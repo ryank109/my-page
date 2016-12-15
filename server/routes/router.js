@@ -6,6 +6,7 @@ var guestRoute = require('./guest');
 var indexRoute = require('./index');
 var loginRoute = require('./login');
 var photosRoute = require('./photos');
+var rsvpRoute = require('./rsvp');
 var saveTheDateRoute = require('./savethedate');
 
 var router = express.Router();
@@ -19,7 +20,7 @@ router.use('/no', indexRoute);
 router.use('/photos', photosRoute);
 router.use('/photos/:photoId', indexRoute);
 router.use('/registry', indexRoute);
-router.use('/rsvp', indexRoute);
+router.use('/rsvp', rsvpRoute);
 router.use('/savethedate', saveTheDateRoute);
 router.use('/sooandryanadmin', adminRoute);
 router.use('/story', indexRoute);

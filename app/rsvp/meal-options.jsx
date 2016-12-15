@@ -1,37 +1,47 @@
 import FormItem from 'rk/components/form-item';
 import Radio from 'rk/components/radio';
 
-export default props => (
-    <FormItem className="rsvp-page__form__meal" label="Meal Option">
+const MealOption = props => (
+    <FormItem
+        className="rsvp-page__form__meal"
+        error={props.mealOptionError}
+        label={props.label}
+    >
         <Radio
-            id="meat"
+            id={`meat_${props.index}`}
             isChecked={props.value === 'meat'}
-            label="Meat"
+            label="Short Rib"
             onChange={props.onChange}
             value="meat"
         />
         <Radio
-            id="fish"
+            id={`fish_${props.index}`}
             isChecked={props.value === 'fish'}
-            label="Fish"
+            label="Salmon"
             onChange={props.onChange}
             value="fish"
         />
         <Radio
-            id="veggie"
+            id={`veggie_${props.index}`}
             isChecked={props.value === 'veggie'}
-            label="Veggie"
+            label="Ratatouille (Veggie)"
             onChange={props.onChange}
             value="veggie"
         />
         {props.showKidsOption &&
             <Radio
-                id="kids"
+                id={`kids_${props.index}`}
                 isChecked={props.value === 'kids'}
-                label="Kids (Under 10)"
+                label="Kids"
                 onChange={props.onChange}
                 value="kids"
             />
         }
     </FormItem>
 );
+
+MealOption.defaultProps = {
+    label: 'Meal Option'
+};
+
+export default MealOption;

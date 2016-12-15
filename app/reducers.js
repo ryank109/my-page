@@ -25,7 +25,7 @@ const reducers = {
     })
 };
 
-const resolver = reducers => (state = {}, action) => {
+export const resolver = reducers => (state = {}, action) => {
     const reducerFunc = reducers[action.type];
     return reducerFunc ? reducerFunc(state, action) : state;
 };

@@ -10,6 +10,8 @@ import NoPage from 'rk/no';
 import PhotosPage from 'rk/photos';
 import RegistryPage from 'rk/registry';
 import RsvpPage from 'rk/rsvp';
+import RsvpIndex from 'rk/rsvp/rsvp-index';
+import RsvpForm from 'rk/rsvp/rsvp-form';
 import YesPage from 'rk/yes';
 
 export default function AppRouter(history) {
@@ -29,7 +31,10 @@ export default function AppRouter(history) {
                 </Route>
                 <Route path="yes" component={YesPage} />
             </Route>
-            <Route path="rsvp" component={RsvpPage} />
+            <Route path="rsvp" component={RsvpPage}>
+                <IndexRoute component={RsvpIndex} />
+                <Route path="form" component={RsvpForm} />
+            </Route>
         </Router>
     );
 }

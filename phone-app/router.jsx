@@ -5,6 +5,9 @@ import HomePage from 'rk/home';
 import RegistryPage from 'rk/registry';
 import PhotosPage from 'phone/photos';
 import PhotoViewer from 'phone/photos/photo-viewer';
+import RsvpPage from 'rk/rsvp';
+import RsvpIndex from 'rk/rsvp/rsvp-index';
+import RsvpForm from 'rk/rsvp/rsvp-form';
 
 export default function AppRouter(history) {
     return (
@@ -17,7 +20,11 @@ export default function AppRouter(history) {
                 <Route path="photos" component={PhotosPage} />
                 <Route path="map" component={RegistryPage} />
             </Route>
-            <Route path="/photos/:photoId" component={PhotoViewer} />
+            <Route path="photos/:photoId" component={PhotoViewer} />
+            <Route path="rsvp" component={RsvpPage}>
+                <IndexRoute component={RsvpIndex} />
+                <Route path="form" component={RsvpForm} />
+            </Route>
         </Router>
     );
 }

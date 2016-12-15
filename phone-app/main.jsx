@@ -12,5 +12,3 @@ const rootElement = document.getElementById('main');
 if (rootElement) {
     render(<Provider store={store}>{router(browserHistory)}</Provider>, rootElement);
 }
-
-document.addEventListener('touchmove', event => event.preventDefault(), false);

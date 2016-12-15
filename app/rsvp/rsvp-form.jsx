@@ -1,55 +1,41 @@
-import { get, map } from 'lodash';
+import { isEmpty, map, some } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from 'rk/components/button';
 import FormItem from 'rk/components/form-item';
-import Input from 'rk/components/input';
 import GuestForm from 'rk/rsvp/guest-form';
 import MealOptions from 'rk/rsvp/meal-options';
 import {
     addGuest,
+    removeGuest,
+    rsvp,
     setFirstName,
+    setGuestFirstName,
+    setGuestLastName,
+    setGuestMealOption,
     setLastName,
     setMealOption,
-    rsvp
+    setReturnTransition,
+    validateGuestForm
 } from 'rk/rsvp/actions';
 
-const selector = state => {
-    const rsvp = state.rsvp;
-    return {
-        ...rsvp,
-        firstName: get(rsvp, 'firstName', ''),
-        lastName: get(rsvp, 'lastName', ''),
-        mealOption: get(rsvp, 'mealOption', '')
-    };
-};
+const selector = state => state.rsvp;
 
 class RsvpForm extends Component {
-    constructor(props) {
-        super(props);
+    componentDidMount() {
+        this.props.setReturnTransition();
     }
 
     render() {
         return (
             <div className="page">
                 <div className="rsvp-page">
-                    <FormItem className="rsvp-page__form">
-                        <FormItem className="rsvp-page__form__name" label="First Name">
-                            <Input
-                                error={this.props.firstNameError}
-                                onChange={this.props.setFirstName}
-                                value={this.props.firstName}
-                            />
-                        </FormItem>
-                        <FormItem className="rsvp-page__form__name" label="Last Name">
-                            <Input
-                                error={this.props.lastNameError}
-                                onChange={this.props.setLastName}
-                                value={this.props.lastName}
-                            />
-                        </FormItem>
+                    <FormItem className="rsvp-page__form-item" label="RSVP For">
+                        <div className="rsvp-page__name">{this.props.firstName} {this.props.lastName}</div>
                     </FormItem>
                     <MealOptions
+                        index={-1}
+                        label="What would you like to have for your dinner?"
                         onChange={this.props.setMealOption}
                         showKidsOption={false}
                         value={this.props.mealOption}
@@ -57,13 +43,14 @@ class RsvpForm extends Component {
                     {this.renderGuest()}
                     <Button
                         className="rsvp-page__button rsvp-page__button--secondary"
+                        isDisabled={this.props.disableAddGuest}
                         label="+ Add Guest"
                         onClick={this.props.addGuest}
                     />
                     <Button
                         className="rsvp-page__button rsvp-page__button--primary"
                         label="Done"
-                        onClick={this.props.rsvp}
+                        onClick={this.rsvp.bind(this)}
                     />
                 </div>
             </div>
@@ -72,15 +59,51 @@ class RsvpForm extends Component {
 
     renderGuest() {
         return map(this.props.guests, (guest, index) => (
-            <GuestForm index={index} />
+            <GuestForm
+                firstName={guest.firstName}
+                firstNameError={guest.firstNameError}
+                index={index}
+                key={index}
+                lastName={guest.lastName}
+                lastNameError={guest.lastNameError}
+                mealOption={guest.mealOption}
+                mealOptionError={guest.mealOptionError}
+                onFirstNameChange={firstName => this.props.setGuestFirstName(index, firstName)}
+                onLastNameChange={lastName => this.props.setGuestLastName(index, lastName)}
+                onMealOptionChange={mealOption => this.props.setGuestMealOption(index, mealOption)}
+                onRemove={() => this.props.removeGuest(index)}
+            />
         ));
+    }
+
+    rsvp() {
+        const hasError = some(this.props.guests, guest =>
+            isEmpty(guest.firstName) || isEmpty(guest.lastName)
+        );
+
+        if (hasError) {
+            this.props.validateGuestForm();
+            return;
+        }
+
+        this.props.rsvp(
+            this.props.firstName,
+            this.props.lastName,
+            this.props.mealOption,
+            this.props.guests);
     }
 }
 
 export default connect(selector, {
     addGuest,
+    removeGuest,
+    rsvp,
     setFirstName,
+    setGuestFirstName,
+    setGuestLastName,
+    setGuestMealOption,
     setLastName,
     setMealOption,
-    rsvp
+    setReturnTransition,
+    validateGuestForm
 })(RsvpForm);
