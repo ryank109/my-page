@@ -6,6 +6,7 @@ import AdminCommentsPage from 'rk/admin/comments';
 import App from 'rk/app';
 import CommentPage from 'rk/comments';
 import Home from 'rk/home';
+import InfoPage from 'rk/info';
 import NoPage from 'rk/no';
 import PhotosPage from 'rk/photos';
 import RegistryPage from 'rk/registry';
@@ -19,21 +20,22 @@ export default function AppRouter(history) {
         <Router history={history}>
             <Route path="/" component={App}>
                 <IndexRoute component={Home} />
-                <Route path="adminlogin" component={AdminLogin} />
                 <Route path="comment" component={CommentPage} />
+                <Route path="info" component={InfoPage} />
                 <Route path="no" component={NoPage} />
                 <Route path="photos" component={PhotosPage} />
                 <Route path="registry" component={RegistryPage} />
-                <Route path="sooandryanadmin" component={AdminPage}>
-                    <IndexRoute component={AdminGuestsPage} />
-                    <Route path="guests" component={AdminGuestsPage} />
-                    <Route path="comments" component={AdminCommentsPage} />
-                </Route>
                 <Route path="yes" component={YesPage} />
             </Route>
             <Route path="rsvp" component={RsvpPage}>
                 <IndexRoute component={RsvpIndex} />
                 <Route path="form" component={RsvpForm} />
+            </Route>
+            <Route path="adminlogin" component={AdminLogin} />
+            <Route path="sooandryanadmin" component={AdminPage}>
+                <IndexRoute component={AdminGuestsPage} />
+                <Route path="guests" component={AdminGuestsPage} />
+                <Route path="comments" component={AdminCommentsPage} />
             </Route>
         </Router>
     );

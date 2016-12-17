@@ -1,5 +1,6 @@
 import { isEmpty } from 'lodash';
 import { push, replace } from 'react-router-redux';
+import { popupActions } from 'react-redux-popup';
 import Request from 'rk/common/request';
 
 export const ADD_GUEST = 'RSVP_ADD_GUEST';
@@ -34,7 +35,7 @@ export function cantMakeIt(firstName, lastName) {
             url: '/rsvp',
             data: { firstName, lastName, cantMake: true }
         }).then(() => {
-            dispatch(replace('/'));
+            dispatch(popupActions.openPopup('seeYouModal'));
         });
     };
 }
@@ -133,7 +134,7 @@ export function rsvp(firstName, lastName, mealOption, guests) {
             url: '/rsvp',
             data: { firstName, lastName, mealOption, guests }
         }).then(() => {
-            dispatch(replace('/'));
+            dispatch(popupActions.openPopup('thankYouModal'));
         });
     };
 }

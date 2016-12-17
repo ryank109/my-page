@@ -1,9 +1,12 @@
 import { get } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { popupActions } from 'react-redux-popup';
 import Button from 'rk/components/button';
 import FormItem from 'rk/components/form-item';
 import Input from 'rk/components/input';
+import SeeYouModal from 'rk/rsvp/see-you';
 import {
     cantMakeIt,
     init,
@@ -67,6 +70,15 @@ class RsvpIndex extends Component {
                         />
                     </div>
                 </div>
+                <SeeYouModal
+                    height={200}
+                    id="seeYouModal"
+                    width={300}
+                    onClickOk={() => {
+                        this.props.closePopup('seeYouModal');
+                        this.props.push('/');
+                    }}
+                />
             </div>
         );
     }
@@ -83,7 +95,9 @@ class RsvpIndex extends Component {
 export default connect(selector, {
     cantMakeIt,
     init,
+    push,
     setFirstName,
     setLastName,
-    startRsvp
+    startRsvp,
+    closePopup: popupActions.closePopup
 })(RsvpIndex);

@@ -2,6 +2,7 @@ import { get } from 'lodash';
 import { Component, cloneElement } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { PopupSandbox } from 'react-redux-popup';
 
 const selector = (state, ownProps) => {
     return {
@@ -30,6 +31,13 @@ class RsvpPage extends Component {
                         })}
                     </ReactCSSTransitionGroup>
                 </div>
+                <PopupSandbox
+                    modalTransitionName="rk-modal"
+                    modalTransitionEnterTimeout={300}
+                    modalTransitionLeaveTimeout={300}
+                    popupTransitionName="rk-popup"
+                    popupTransitionEnterTimeout={100}
+                    popupTransitionLeaveTimeout={100} />
             </div>
         );
     }

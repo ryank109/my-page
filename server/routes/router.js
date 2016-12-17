@@ -16,6 +16,7 @@ router.use('/adminlogin', loginRoute);
 router.use('/auth', loginRoute);
 router.use('/comment', commentRoute);
 router.use('/guest', guestRoute);
+router.use('/info', indexRoute);
 router.use('/no', indexRoute);
 router.use('/photos', photosRoute);
 router.use('/photos/:photoId', indexRoute);
