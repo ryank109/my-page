@@ -28,8 +28,8 @@ class RsvpForm extends Component {
 
     render() {
         return (
-            <div className="page">
-                <div className="rsvp-page">
+            <div className="page rsvp-page">
+                <div className="rsvp-page__container">
                     <FormItem className="rsvp-page__form-item" label="RSVP For">
                         <div className="rsvp-page__name">{this.props.firstName} {this.props.lastName}</div>
                     </FormItem>

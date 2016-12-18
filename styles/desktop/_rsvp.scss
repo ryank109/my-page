@@ -21,10 +21,12 @@
 }
 
 .rsvp-page {
-    align-self: baseline;
-    display: flex;
-    flex-direction: column;
-    width: 600px;
+    &__container {
+        align-self: baseline;
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+    }
 
     &__form,
     &__form-item {

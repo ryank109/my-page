@@ -28,8 +28,8 @@ class RsvpIndex extends Component {
 
     render() {
         return (
-            <div className="page">
-                <div className="rsvp-page">
+            <div className="page rsvp-page">
+                <div className="rsvp-page__container">
                     <div className="form-item rsvp-page__form">
                         <FormItem
                             className="rsvp-page__form__name"
