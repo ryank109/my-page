@@ -5,7 +5,7 @@ import commentsReducer from 'rk/comments/reducer';
 import menuReducer from 'rk/menu/reducer';
 import photoReducer from 'rk/photos/reducer';
 import rsvpReducer from 'rk/rsvp/reducer';
-import { LOAD_COMMENTS, LOAD_GUESTS } from 'rk/admin/actions';
+import { LOAD_COMMENTS, LOAD_GUESTS, LOAD_RSVP } from 'rk/admin/actions';
 import { LOGIN_FAILED } from 'rk/login/actions';
 
 const reducers = {
@@ -22,6 +22,11 @@ const reducers = {
     [LOAD_COMMENTS]: (state, action) => ({
         ...state,
         comments: action.data
+    }),
+
+    [LOAD_RSVP]: (state, { data }) => ({
+        ...state,
+        rsvp: data
     })
 };
 
