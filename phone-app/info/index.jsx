@@ -14,22 +14,17 @@ export default class InfoPage extends Component {
                         <p className="info-page__venue__address">
                             <strong>Magnolia Hotel</strong>
                             <br />
-                            1100 Texas Ave
-                            <br />
-                            Houston, TX 77002
+                            <a href="https://maps.app.goo.gl/i/e_vHr" target="_blank">
+                                1100 Texas Ave
+                                <br />
+                                Houston, TX 77002
+                            </a>
                             <br />
                             <br />
                             <strong>Time</strong>
                             <br />
                             January 28, 2017 @5pm
                         </p>
-                        <iframe
-                            className="info-page__venue__map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.6393843589385!2d-95.36375394949188!3d29.75914813886024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf25238b1dbb%3A0x3eabed5626a27737!2s1100+Texas+Ave%2C+Houston%2C+TX+77002!5e0!3m2!1sen!2sus!4v1481779349574"
-                            width={280}
-                            height={180}
-                            frameBorder="0"
-                        />
                     </div>
                 </div>
                 <div className="excerpt">
@@ -44,17 +39,12 @@ export default class InfoPage extends Component {
                         <p className="info-page__parking__address">
                             <strong>Binz Building Garage</strong>
                             <br />
-                            1015 Texas Ave
-                            <br />
-                            Houston, TX 77002
+                            <a href="https://maps.app.goo.gl/i/RmRRU" target="_blank">
+                                1015 Texas Ave
+                                <br />
+                                Houston, TX 77002
+                            </a>
                         </p>
-                        <iframe
-                            className="map-page__map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d865.9046068727631!2d-95.36232094222936!3d29.75975445532821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf2537386cb5%3A0xb812b7bfbff2378f!2s1015+Texas+Ave%2C+Houston%2C+TX+77002!5e0!3m2!1sen!2sus!4v1481854829668"
-                            width={280}
-                            height={180}
-                            frameBorder="0"
-                        />
                     </div>
                     <p className="excerpt__description">
                         <a
@@ -69,7 +59,7 @@ export default class InfoPage extends Component {
                     <h2 className="excerpt__title">Stay</h2>
                     <p className="excerpt__description">
                         Block of rooms have been reserved at a special rate at the Magnolia Hotel.
-                        Please visit this the link below to book online or call <a href="tel:713-221-0011">(713) 221-0011</a> and make reference to Park and Kim Wedding.
+                        Please visit the link below to book online or call <a href="tel:713-221-0011">(713) 221-0011</a> and make reference to Park and Kim Wedding.
                         <br />
                         <br />
                         <a href="https://aws.passkey.com/event/15661137/owner/25349/home" target="_blank">Reserve online</a>
@@ -89,7 +79,9 @@ export default class InfoPage extends Component {
                         <br />
                         <i>email:</i> <a href="mailto:sooryanwedding@gmail.com">sooryanwedding@gmail.com</a>
                         <br />
+                        <br />
                         <i>Ryan's #:</i> <a href="tel:713-851-3895">713-851-3895</a>
+                        <br />
                         <br />
                         <i>Soo's #:</i> <a href="tel:215-882-0334">215-882-0334</a>
                     </p>

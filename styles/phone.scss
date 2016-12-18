@@ -24,7 +24,6 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    overflow: auto;
 }
 
 .main-container {
@@ -44,13 +43,21 @@ body {
 }
 
 @import 'components/button';
+@import 'components/excerpt';
 @import 'components/input';
-@import 'components/page';
 @import 'components/popup';
 @import 'desktop/animation';
-@import 'phone/menu';
-@import 'phone/home';
-@import 'phone/registry';
 @import 'phone/comments';
+@import 'phone/home';
+@import 'phone/info';
+@import 'phone/menu';
 @import 'phone/photos';
+@import 'phone/registry';
 @import 'phone/rsvp';
+
+.excerpt {
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    width: auto;
+}

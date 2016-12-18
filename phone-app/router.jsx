@@ -2,7 +2,7 @@ import { IndexRoute, Router, Route } from 'react-router';
 import App from 'phone/app';
 import CommentPage from 'rk/comments';
 import HomePage from 'rk/home';
-import InfoPage from 'rk/info';
+import InfoPage from 'phone/info';
 import RegistryPage from 'rk/registry';
 import PhotosPage from 'phone/photos';
 import PhotoViewer from 'phone/photos/photo-viewer';
