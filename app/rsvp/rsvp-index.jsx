@@ -1,12 +1,9 @@
 import { get } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
-import { popupActions } from 'react-redux-popup';
 import Button from 'rk/components/button';
 import FormItem from 'rk/components/form-item';
 import Input from 'rk/components/input';
-import SeeYouModal from 'rk/rsvp/see-you';
 import {
     cantMakeIt,
     init,
@@ -33,13 +30,15 @@ class RsvpIndex extends Component {
         return (
             <div className="page">
                 <div className="rsvp-page">
-                    <FormItem className="rsvp-page__form">
+                    <div className="form-item rsvp-page__form">
                         <FormItem
                             className="rsvp-page__form__name"
                             error={this.props.firstNameError}
+                            id="firstName"
                             label="First Name"
                         >
                             <Input
+                                id="firstName"
                                 error={this.props.firstNameError}
                                 onChange={this.props.setFirstName}
                                 value={this.props.firstName}
@@ -48,15 +47,17 @@ class RsvpIndex extends Component {
                         <FormItem
                             className="rsvp-page__form__name"
                             error={this.props.lastNameError}
+                            id="lastName"
                             label="Last Name"
                         >
                             <Input
+                                id="lastName"
                                 error={this.props.lastNameError}
                                 onChange={this.props.setLastName}
                                 value={this.props.lastName}
                             />
                         </FormItem>
-                    </FormItem>
+                    </div>
                     <div className="rsvp-page__buttons">
                         <Button
                             className="rsvp-page__button"
@@ -70,15 +71,6 @@ class RsvpIndex extends Component {
                         />
                     </div>
                 </div>
-                <SeeYouModal
-                    height={200}
-                    id="seeYouModal"
-                    width={300}
-                    onClickOk={() => {
-                        this.props.closePopup('seeYouModal');
-                        this.props.push('/');
-                    }}
-                />
             </div>
         );
     }
@@ -95,9 +87,7 @@ class RsvpIndex extends Component {
 export default connect(selector, {
     cantMakeIt,
     init,
-    push,
     setFirstName,
     setLastName,
-    startRsvp,
-    closePopup: popupActions.closePopup
+    startRsvp
 })(RsvpIndex);

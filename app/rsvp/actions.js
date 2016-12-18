@@ -121,9 +121,9 @@ export function startRsvp(firstName, lastName) {
         }).then(response => {
             const data = JSON.parse(response.response);
             dispatch(loadData(data));
-            dispatch(push('rsvp/form'));
+            dispatch(push('/rsvp/form'));
         }).catch(() => {
-            dispatch(push('rsvp/form'));
+            dispatch(push('/rsvp/form'));
         });
     };
 }

@@ -44,15 +44,17 @@ export default class GuestForm extends Component {
                             label="(remove)"
                             onClick={this.props.onRemove} />
                     </h2>
-                    <FormItem className="rsvp-page__form">
+                    <div className="form-item rsvp-page__form">
                         <FormItem
                             className="rsvp-page__form__name"
                             error={this.props.firstNameError}
+                            id={`firstName_${this.props.index}`}
                             label="First Name"
                         >
                             <Input
                                 className="rsvp-page__email"
                                 error={this.props.firstNameError}
+                                id={`firstName_${this.props.index}`}
                                 onChange={this.props.onFirstNameChange}
                                 value={this.props.firstName}
                             />
@@ -60,16 +62,18 @@ export default class GuestForm extends Component {
                         <FormItem
                             className="rsvp-page__form__name"
                             error={this.props.lastNameError}
+                            id={`lastName_${this.props.index}`}
                             label="Last Name"
                         >
                             <Input
                                 className="rsvp-page__email"
                                 error={this.props.lastNameError}
+                                id={`lastName_${this.props.index}`}
                                 onChange={this.props.onLastNameChange}
                                 value={this.props.lastName}
                             />
                         </FormItem>
-                    </FormItem>
+                    </div>
                     <MealOptions
                         mealOptionError={this.props.mealOptionError}
                         index={this.props.index}

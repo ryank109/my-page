@@ -1,13 +1,10 @@
 import { isEmpty, map, some } from 'lodash';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { replace } from 'react-router-redux';
-import { popupActions } from 'react-redux-popup';
 import Button from 'rk/components/button';
 import FormItem from 'rk/components/form-item';
 import GuestForm from 'rk/rsvp/guest-form';
 import MealOptions from 'rk/rsvp/meal-options';
-import ThankYouModal from 'rk/rsvp/thank-you';
 import {
     addGuest,
     removeGuest,
@@ -56,15 +53,6 @@ class RsvpForm extends Component {
                         onClick={this.rsvp.bind(this)}
                     />
                 </div>
-                <ThankYouModal
-                    height={200}
-                    id="thankYouModal"
-                    width={300}
-                    onClickOk={() => {
-                        this.props.closePopup('thankYouModal');
-                        this.props.replace('/info');
-                    }}
-                />
             </div>
         );
     }
@@ -109,7 +97,6 @@ class RsvpForm extends Component {
 export default connect(selector, {
     addGuest,
     removeGuest,
-    replace,
     rsvp,
     setFirstName,
     setGuestFirstName,
@@ -118,6 +105,5 @@ export default connect(selector, {
     setLastName,
     setMealOption,
     setReturnTransition,
-    validateGuestForm,
-    closePopup: popupActions.closePopup
+    validateGuestForm
 })(RsvpForm);
