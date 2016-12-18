@@ -1,7 +1,7 @@
 import { get } from 'lodash';
 import { Component, cloneElement } from 'react';
 import { connect } from 'react-redux';
-import { PopupSandbox } from 'react-redux-popup';
+import { Portal } from 'react-redux-popup';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Menu from 'rk/menu';
 import { initialMenuPosition } from 'rk/menu/actions';
@@ -34,7 +34,7 @@ class App extends Component {
                 <div className="menu-container">
                     <Menu activeRoute={this.props.activeRoute} />
                 </div>
-                <PopupSandbox
+                <Portal
                     modalTransitionName="rk-modal"
                     modalTransitionEnterTimeout={300}
                     modalTransitionLeaveTimeout={300}
