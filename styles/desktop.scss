@@ -24,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    overflow: auto;
 }
 
 .main-container {
@@ -33,6 +34,8 @@ body {
     & > span {
         display: flex;
         flex-grow: 1;
+        max-width: 100%;
+        min-width: 100%;
     }
 }
 
@@ -42,13 +45,16 @@ body {
 }
 
 @import 'admin';
-@import 'components/page';
 @import 'components/button';
+@import 'components/excerpt';
 @import 'components/input';
+@import 'components/page';
 @import 'components/popup';
 @import 'desktop/animation';
-@import 'desktop/menu';
+@import 'desktop/comments';
 @import 'desktop/home';
+@import 'desktop/info';
+@import 'desktop/menu';
 @import 'desktop/photos';
 @import 'desktop/registry';
-@import 'desktop/comments';
+@import 'desktop/rsvp';

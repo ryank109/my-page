@@ -19,7 +19,7 @@ module.exports = function(collectionName) {
             },
 
             delete: function(email) {
-                return collection.remove({ email: data.email });
+                return collection.remove({ email: email });
             }
         };
     };

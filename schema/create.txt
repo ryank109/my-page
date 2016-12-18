@@ -5,3 +5,6 @@ db.createCollection('additionalGuest');
 db.getCollection('additionalGuest').createIndex({ email: 'hashed' });
 db.createCollection('comment');
 db.getCollection('comment').createIndex({ name: 'hashed' });
+
+db.createCollection('rsvp');
+db.getCollection('rsvp').createIndex({ lastName: 1, firstName: 1 }, { unique: true });

@@ -36,6 +36,7 @@ class App extends Component {
         super(props);
         this.hasTouchMoved = false;
         this.repositionMenuHandler = () => this.repositionMenu();
+        this.scrollHandler = event => event.preventDefault();
     }
 
     render() {
@@ -83,6 +84,7 @@ class App extends Component {
     componentDidMount() {
         this.initializeMenu();
         window.addEventListener('orientationchange', this.repositionMenuHandler);
+        document.addEventListener('touchmove', this.scrollHandler, false);
     }
 
     componentDidUpdate(prevProps) {
@@ -96,6 +98,7 @@ class App extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('orientationchange', this.repositionMenuHandler);
+        document.removeEventListener('touchmove', this.scrollHandler, false);
     }
 
     initializeMenu() {

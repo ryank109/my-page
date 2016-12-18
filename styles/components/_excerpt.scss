@@ -1,0 +1,12 @@
+.excerpt {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-bottom: 40px;
+    width: 600px;
+
+    &__title {
+        align-self: center;
+        color: #999;
+    }
+}

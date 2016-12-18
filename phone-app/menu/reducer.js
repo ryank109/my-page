@@ -16,7 +16,7 @@ function getMenuXPosition(menuContainerWidth, menuItemLeft) {
     return (menuContainerWidth / 2) - MENU_ITEM_WIDTH_OFFSET - menuItemLeft;
 }
 
-const reducerFuncs = {
+export default {
     [INITIAL_MENU_POSITION]: (state, action) => {
         const menuXPosition = getMenuXPosition(
             action.menuContainerWidth,
@@ -147,8 +147,3 @@ const reducerFuncs = {
         };
     }
 };
-
-export default function reducer(state = {}, action) {
-    const reducer = reducerFuncs[action.type];
-    return reducer ? reducer(state, action) : state;
-}

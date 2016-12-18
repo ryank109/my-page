@@ -6,6 +6,7 @@ $color5: #d4f0fc; /* pastel blue */
 $color6: #5F9EA0; /* cadet blue */
 $color7: #F08080; /* light coral */
 $color8: #2BAADF; /* blue */
+$color9: #ce4844; /* red */
 
 .input {
     border: 1px solid #ccc;
@@ -14,9 +15,39 @@ $color8: #2BAADF; /* blue */
 }
 
 .input--error {
-    border-left: solid 4px red;
+    padding-left: 7px;
+    border-left: solid 4px $color9;
 }
 
 .textarea {
     resize: none;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    &__error {
+        color: $color9;
+        margin-top: 5px;
+    }
+
+    &__label {
+        color: #999;
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+}
+
+.radio {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 24px;
+    margin: 5px 0;
+
+    > input {
+        margin-right: 10px;
+    }
 }

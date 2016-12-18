@@ -1,6 +1,6 @@
 import { INITIAL_MENU_POSITION, SET_MENU_POSITION } from 'rk/menu/actions';
 
-export const reducers = {
+export default {
     [INITIAL_MENU_POSITION]: (state, { position }) => ({
         ...state,
         currentPosition: position
@@ -17,8 +17,3 @@ export const reducers = {
         };
     }
 };
-
-export default function reducer(state = {}, action) {
-    const reducer = reducers[action.type];
-    return reducer ? reducer(state, action) : state;
-}

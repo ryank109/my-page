@@ -4,19 +4,19 @@ export const SET_MENU_POSITION = 'SET_MENU_POSITION';
 export const MENUS = [
     '/',
     /* '/story', */
+    '/info',
     '/photos',
     '/registry',
-    '/comment' /*,
-    '/map' */
+    '/comment'
 ];
 
 export const MENU_DETAILS = {
     '/': { icon: 'fa-home', title: 'Home' },
-    /* '/story': { icon: 'fa-heart', title: 'Our Story' }, */
+    '/comment': { icon: 'fa-commenting', title: 'Leave a Comment' },
+    '/info': { icon: 'fa-info', title: 'Info' },
     '/photos': { icon: 'fa-camera', title: 'Photos' },
-    '/registry': { icon: 'fa-gift', title: 'Registry' },
-    '/comment': { icon: 'fa-commenting', title: 'Leave a Comment' } /*,
-    '/map': { icon: 'fa-map', title: 'Location' } */
+    '/registry': { icon: 'fa-gift', title: 'Registry' }
+    /* '/story': { icon: 'fa-heart', title: 'Our Story' }, */
 };
 
 export function initialMenuPosition(route) {

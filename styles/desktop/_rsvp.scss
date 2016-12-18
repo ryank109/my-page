@@ -1,0 +1,114 @@
+.guest-form {
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+
+    &__title {
+        align-items: center;
+        display: flex;
+    }
+
+    &__remove {
+        background-color: transparent;
+        color: #d9534f;
+        font-size: 16px;
+
+        &:hover {
+            background-color: transparent;
+            color: darken(#d9534f, 10%);
+            text-decoration: underline;
+        }
+    }
+}
+
+.rsvp-page {
+    align-self: baseline;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+
+    &__form,
+    &__form-item {
+        margin-bottom: 40px;
+    }
+
+    &__form {
+        flex-direction: row;
+
+        &__meal {
+            margin-bottom: 40px;
+        }
+
+        &__name {
+            margin: 0 10px 0 0;
+            min-width: auto;
+        }
+    }
+
+    &__name {
+        font-size: 24px;
+    }
+
+    &__buttons {
+        display: flex;
+        margin: 0 10px;
+    }
+
+    &__button {
+        align-self: flex-start;
+
+        &--primary {
+            align-self: flex-end;
+            background-color: #2baadf;
+            color: #fff;
+            margin: 20px;
+
+            &:hover {
+                background-color: darken(#2baadf, 5%);
+            }
+        }
+
+        &--delete {
+            background-color: #d9534f;
+            color: #fff;
+
+            &:hover {
+                background-color: darken(#d9534f, 5%);
+            }
+        }
+
+        &--secondary {
+            background-color: #fff;
+            color: #2baadf;
+            font-size: 20px;
+
+            &:hover {
+                background-color: transparent;
+                color: darken(#2baadf, 5%);
+            }
+        }
+
+    }
+}
+
+.rsvp-date,
+.rsvp-title {
+    align-items: center;
+    color: #ccc;
+    display:flex;
+    flex-direction:column;
+    flex-shrink: 0;
+    font-size: 60px;
+    margin: 20px 0 10px 0;
+}
+
+.rsvp-date {
+    font-size: 24px;
+    margin: 0 0 50px 0;
+}
+
+.rsvp-footer {
+    align-items: flex-end;
+    color: #fff;
+    flex-direction: column;
+    font-size: 30px;
+}
