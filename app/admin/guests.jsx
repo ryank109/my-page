@@ -13,7 +13,6 @@ class Guests extends Component {
     render() {
         return (
             <div className="list">
-                <div>Guests</div>
                 <div className="list__header">
                     <div className="guest__email">Email</div>
                     <div className="guest__attend">Attend</div>

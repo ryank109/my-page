@@ -3,8 +3,21 @@ var request = require('request');
 var router = express.Router();
 var collection = require('../collection/rsvp');
 var indexRoute = require('./index');
+var checkAuth = require('../check-auth').checkAuthAPI;
 
-router.get('/', indexRoute);
+router.get('/', function(req, res, next) {
+    if (req.get('content-type') === 'application/json') {
+        checkAuth(req, res, next);
+        return;
+    }
+    return indexRoute(req, res);
+}, function(req, res) {
+    var db = req.db;
+    var rsvpCollection = collection(db);
+    rsvpCollection.all().then(function(doc) {
+        res.status(200).json(doc);
+    });
+});
 
 router.get('/form', function(req, res) {
     res.redirect('/rsvp');

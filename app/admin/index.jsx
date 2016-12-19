@@ -6,8 +6,9 @@ export default class AdminPage extends Component {
         return (
             <div className="admin">
                 <div className="admin__links">
-                    <Link className="admin__links__link" to="sooandryanadmin/guests">Guests</Link>
-                    <Link className="admin__links__link" to="sooandryanadmin/comments">Comments</Link>
+                    <Link className="admin__links__link" to="/sooandryanadmin/guests">Guests</Link>
+                    <Link className="admin__links__link" to="/sooandryanadmin/comments">Comments</Link>
+                    <Link className="admin__links__link" to="/sooandryanadmin/rsvp">RSVP</Link>
                 </div>
                 <div className="admin__content">
                     {this.props.children}

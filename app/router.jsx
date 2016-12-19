@@ -3,6 +3,7 @@ import AdminLogin from 'rk/login';
 import AdminPage from 'rk/admin';
 import AdminGuestsPage from 'rk/admin/guests';
 import AdminCommentsPage from 'rk/admin/comments';
+import AdminRsvpPage from 'rk/admin/rsvp';
 import App from 'rk/app';
 import CommentPage from 'rk/comments';
 import Home from 'rk/home';
@@ -36,6 +37,7 @@ export default function AppRouter(history) {
                 <IndexRoute component={AdminGuestsPage} />
                 <Route path="guests" component={AdminGuestsPage} />
                 <Route path="comments" component={AdminCommentsPage} />
+                <Route path="rsvp" component={AdminRsvpPage} />
             </Route>
         </Router>
     );

@@ -13,7 +13,6 @@ class Comments extends Component {
     render() {
         return (
             <div className="list">
-                <div>Comments</div>
                 <div className="list__header">
                     <div className="comment__name">Name</div>
                     <div className="comment__comments">Comments</div>
