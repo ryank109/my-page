@@ -9,9 +9,21 @@ const selector = state => {
         if (rsvp.cantMake) { return sum; }
         return sum + get(rsvp, 'guests.length', 0) + 1;
     }, 0);
+
+    let rsvp = [];
+    if (state.app.rsvp) {
+        rsvp = [].concat(state.app.rsvp);
+    }
+    rsvp.sort((a, b) => {
+        if (!a.cantMake && b.cantMake) { return -1; }
+        if (!a.cantMake && !b.cantMake) {
+            return a.firstName.toUpperCase() <= b.firstName.toUpperCase() ? -1 : 1;
+        }
+        return 1;
+    });
     return {
         guestTotal,
-        rsvp: state.app.rsvp
+        rsvp
     };
 };
 
