@@ -17,7 +17,7 @@ const selector = state => {
     rsvp.sort((a, b) => {
         if (!a.cantMake && b.cantMake) { return -1; }
         if (!a.cantMake && !b.cantMake) {
-            return a.firstName.toUpperCase() <= b.firstName.toUpperCase() ? -1 : 1;
+            return new Date(b.updated) - new Date(a.updated);
         }
         return 1;
     });
